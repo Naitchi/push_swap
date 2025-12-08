@@ -1,7 +1,15 @@
 CC = cc 
 CFLAGS = -Wall -Wextra -Werror -g3 -MMD -MP
-SRCS = main.c \
-	   push_swap.c
+SRCS = error_handler.c \
+	   input.c \
+	   list_utils.c \
+	   op_push.c \
+	   op_reverse_rotate.c \
+	   op_rotate.c \
+	   op_swap.c \
+	   push_swap.c \
+	   parsing.c
+
 DIR_OBJS = objects/
 OBJS = $(SRCS:.c=.o)
 OBJECTS = $(addprefix $(DIR_OBJS))
