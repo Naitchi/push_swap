@@ -1,34 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/08 18:01:33 by bclairot          #+#    #+#             */
-/*   Updated: 2025/12/08 19:21:17 by bclairot         ###   ########.fr       */
+/*   Created: 2025/12/08 19:32:29 by bclairot          #+#    #+#             */
+/*   Updated: 2025/12/08 20:12:49 by bclairot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include "list_utils.h"
-# include <stdlib.h>
-# include <unistd.h>
 
-typedef struct s_data
+
+int	ft_atoi(const char *str)
 {
-	s_list			*a;
-	s_list			*b;
-	int				size_a;
-	int				size_b;
-}					t_data;
+	int		i;
+	int		sign;
+	long	rslt;
 
-typedef struct s_list
-{
-	long long		value;
-	struct s_list	*next;
-}					t_list;
-
-#endif
+	sign = 1;
+	i = 0;
+	rslt = 0;
+	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			sign = -1;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		rslt *= 10;
+		rslt += (str[i] - '0');
+		i++;
+	}
+	return (rslt * sign);
+}

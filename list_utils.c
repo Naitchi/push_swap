@@ -6,7 +6,7 @@
 /*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 18:06:18 by bclairot          #+#    #+#             */
-/*   Updated: 2025/12/08 18:12:29 by bclairot         ###   ########.fr       */
+/*   Updated: 2025/12/08 20:07:01 by bclairot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,16 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 		return ;
 	new->next = *lst;
 	*lst = new;
+}
+
+void	list_check_double(t_list *lst, long long nbr)
+{
+	if (!f)
+		return ;
+	while (lst)
+	{
+		if (lst->content == nbr)
+			error_handler();
+		lst = lst->next;
+	}
 }
