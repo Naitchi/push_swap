@@ -12,7 +12,45 @@
 
 #include "push_swap.h"
 
+int ft_isspace(char c)
+{
+	if (c == ' ' || (c >= 9 && c <= 13))
+		return (1);
+	return (0);
+}
 
+int is_split_needed(char *str)
+{
+	int i = 0;
+	while (str[i])
+	{
+		if (ft_isspace(str[i]))
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
+void parsing (int argc, char *argv[])
+{
+	int i = 1;
+	int j = 0;
+
+	if (argc <= 1)
+		error_handler(0);
+	while (i < argc)
+	{
+		//printf("Parsing arg %d: %s\n", i, argv[i]);
+		j = 0;
+		while (argv[i][j])
+		{
+			if ((argv[i][j] < '0' || argv[i][j] > '9') && argv[i][j] != '-' && argv[i][j] != '+' && !ft_isspace(argv[i][j]))
+				error_handler(0);
+			j++;
+		}
+		i++;
+	}
+}
 
 int	ft_atoi(const char *str)
 {

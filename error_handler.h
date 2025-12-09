@@ -1,30 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list_utils.h                                       :+:      :+:    :+:   */
+/*   error_handler.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/08 18:10:27 by bclairot          #+#    #+#             */
-/*   Updated: 2025/12/08 20:15:46 by bclairot         ###   ########.fr       */
+/*   Created: 2025/12/09 17:30:44 by bclairot          #+#    #+#             */
+/*   Updated: 2025/12/09 17:30:44 by bclairot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#ifndef LIST_UTILS_H
-# define LIST_UTILS_H
+#ifndef ERROR_HANDLER_H
+# define ERROR_HANDLER_H
 
 # include <stdlib.h>
+# include <unistd.h>
+# include "push_swap.h"
 
-typedef struct s_list
-{
-	long long		value;
-	struct s_list	*next;
-}					t_list;
-
-t_list	*ft_lstnew(long long *value);
-void	ft_lstdelone(t_list *lst);
-void	ft_lstadd_back(t_list **lst, t_list *new);
-void	ft_lstadd_front(t_list **lst, t_list *new);
-void	list_check_double(t_list *lst, long long nbr);
+void	error_handler(char *str);
 
 #endif

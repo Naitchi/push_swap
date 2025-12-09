@@ -10,58 +10,65 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "list_utils.h"
 
-t_list	*ft_lstnew(long long *content)
+t_list	*ft_lstnew(long long value)
 {
-	t_list	*new;
+    t_list	*new;
 
-	new = malloc(sizeof(t_list));
-	if (!new)
-		return (NULL);
-	new->content = content;
-	new->next = NULL;
-	return (new);
+    new = malloc(sizeof(t_list));
+    if (!new)
+        return (NULL);
+    new->value = value;
+    new->next = NULL;
+    return (new);
 }
 
 void	ft_lstdelone(t_list *lst)
 {
-	if (!lst)
-		return ;
-	free(lst);
+    if (!lst)
+        return ;
+    free(lst);
+}
+
+t_list	*ft_lstlast(t_list *lst)
+{
+    if (!lst)
+        return (NULL);
+    while (lst->next)
+        lst = lst->next;
+    return (lst);
 }
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list	*elem;
+    t_list	*elem;
 
-	if (!new)
-		return ;
-	if (!(*lst))
-	{
-		*lst = new;
-		return ;
-	}
-	elem = ft_lstlast(*lst);
-	elem->next = new;
+    if (!new)
+        return ;
+    if (!(*lst))
+    {
+        *lst = new;
+        return ;
+    }
+    elem = ft_lstlast(*lst);
+    elem->next = new;
 }
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (!new)
-		return ;
-	new->next = *lst;
-	*lst = new;
+    if (!new)
+        return ;
+    new->next = *lst;
+    *lst = new;
 }
 
 void	list_check_double(t_list *lst, long long nbr)
 {
-	if (!f)
-		return ;
-	while (lst)
-	{
-		if (lst->content == nbr)
-			error_handler();
-		lst = lst->next;
-	}
+    while (lst)
+    {
+        if (lst->value == nbr)
+            error_handler(0);
+        lst = lst->next;
+    }
 }

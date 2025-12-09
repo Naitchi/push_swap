@@ -14,21 +14,23 @@
 # define PUSH_SWAP_H
 
 # include "list_utils.h"
+# include "parsing.h"
+# include "ft_split.h"
+# include "error_handler.h"
+# include "op.h"
+
 # include <stdlib.h>
 # include <unistd.h>
 
+// TODO delete before submission
+#include <stdio.h>
+
 typedef struct s_data
 {
-	s_list			*a;
-	s_list			*b;
+	t_list			*a;
+	t_list			*b;
 	int				size_a;
 	int				size_b;
 }					t_data;
-
-typedef struct s_list
-{
-	long long		value;
-	struct s_list	*next;
-}					t_list;
 
 #endif

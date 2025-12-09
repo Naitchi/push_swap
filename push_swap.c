@@ -10,15 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
+#include <stdio.h>
+
 int	main(int argc, char *argv[])
 {
 	t_data data;
 
-	if (argc <= 1)
-		error_handler();
+	parsing(argc, argv);
+	printf("Parsing done\nNo errors\n");
 
-	init_list(argc, argv, &data);
-
-	select_strategy(argv[1]);
+	// init_list(argc, argv, &data);
+	// select_strategy(argv[1]);
 	return (0);
 }

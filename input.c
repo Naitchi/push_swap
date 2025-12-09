@@ -12,23 +12,18 @@
 
 #include "push_swap.h"
 
-void	init_list(int argc, char *argv[], t_data *data);
+int	ft_strcmp(const char *s1, const char *s2)
 {
-	int i;
-	data->a = NULL;
-	data->b = NULL;
-	data->size_a = 0;
-	data->size_b = 0;
+	int	i;
 
-	i = 2;
-	if (is_strategy(argv[1]) == -1)
-		i = 1;
-	while (i < argc)
+	i = 0;
+	while (s1[i] || s2[i])
 	{
-		ft_atoi(argv[i], &data);
+		if (s1[i] != s2[i])
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 		i++;
 	}
-	return ;
+	return (0);
 }
 
 int	is_strategy(char *str)
@@ -49,41 +44,44 @@ int	is_strategy(char *str)
 	return (-1);
 }
 
-int	ft_strcmp(const char *s1, const char *s2)
+void	init_list(int argc, char *argv[], t_data *data)
 {
-	int	i;
+	int i;
+	int j;
+	char **split_rslt;
+	long long nbr;
 
-	i = 0;
-	while (s1[i] || s2[i])
+	data->a = NULL;
+	data->b = NULL;
+	data->size_a = 0;
+	data->size_b = 0;
+	nbr = 0;
+	i = 2;
+	if (is_strategy(argv[1]) == -1)
+		i = 1;
+	while (i < argc)
 	{
-		if (s1[i] != s2[i])
-			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		// TODO refactor this part in a diffrent function
+		if(is_split_needed(argv[i]))
+		{
+			split_rslt = ft_split(argv[i]);
+			j = 0;
+			while (split_rslt[j])
+			{
+				nbr = ft_atoi(split_rslt[j]);
+				list_check_double(data->a, nbr);
+				ft_lstadd_back(&data->a, ft_lstnew(&nbr));
+				data->size_a++;
+			}
+		}
+		else 
+		{
+			nbr = ft_atoi(split_rslt[j]);
+			list_check_double(data->a, nbr);
+			ft_lstadd_back(&data->a, ft_lstnew(&nbr));
+			data->size_a++;
+		}
 		i++;
 	}
-	return (0);
-}
-
-int	ft_atoi(const char *str)
-{
-	int		i;
-	int		sign;
-	long	rslt;
-
-	sign = 1;
-	i = 0;
-	rslt = 0;
-	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
-		i++;
-	if (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
-			sign = -1;
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		rslt *= 10;
-		rslt += (str[i] - '0');
-		i++;
-	}
+	return ;
 }
