@@ -6,7 +6,7 @@
 /*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 18:06:18 by bclairot          #+#    #+#             */
-/*   Updated: 2025/12/10 11:37:09 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2025/12/10 13:25:47 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ t_list	*ft_lstnew(long long value)
         return (NULL);
     new->value = value;
     new->next = NULL;
+	new->prev = NULL;
     return (new);
 }
 
@@ -63,12 +64,14 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
     }
     ptr = ft_lstlast(*lst);
     ptr->next = new;
+	new->prev = ptr;
 }
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
     if (!new)
         return ;
+	(*lst)->prev = new;
     new->next = *lst;
     *lst = new;
 }
