@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   list_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 18:06:18 by bclairot          #+#    #+#             */
-/*   Updated: 2025/12/08 20:07:01 by bclairot         ###   ########.fr       */
+/*   Updated: 2025/12/10 11:37:09 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,19 @@ t_list	*ft_lstlast(t_list *lst)
     return (lst);
 }
 
+// peut-etre utile a supprimer sinon
+t_list	*ft_lstfirst(t_list *lst)
+{
+    if (!lst)
+        return (NULL);
+    while (lst->prev)
+        lst = lst->prev;
+    return (lst);
+}
+
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-    t_list	*elem;
+    t_list	*ptr;
 
     if (!new)
         return ;
@@ -51,8 +61,8 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
         *lst = new;
         return ;
     }
-    elem = ft_lstlast(*lst);
-    elem->next = new;
+    ptr = ft_lstlast(*lst);
+    ptr->next = new;
 }
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
