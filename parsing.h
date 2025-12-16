@@ -15,10 +15,9 @@
 
 # include "push_swap.h"
 
-
 int ft_isspace(char c);
 int is_split_needed(char *str);
 void parsing (int argc, char *argv[]);
-int	ft_atoi(const char *str);
+long long	ft_atoi(const char *str);
 
 #endif

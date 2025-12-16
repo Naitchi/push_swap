@@ -26,7 +26,7 @@ int	ft_strcmp(const char *s1, const char *s2)
 	return (0);
 }
 
-int	is_strategy(char *str)
+int	select_strategy(char *str)
 {
 	int	i;
 
@@ -44,43 +44,57 @@ int	is_strategy(char *str)
 	return (-1);
 }
 
+void	list_init_element(t_list *lst, const char *str)
+{
+	long long nbr;
+
+	nbr = 0;
+	nbr = ft_atoi(str);
+
+    while (lst)
+    {
+        if (lst->value == nbr)
+            error_handler(0);
+        lst = lst->next;
+    }
+	ft_lstadd_back(&data->a, ft_lstnew(nbr));
+	data->size_a++;
+	return ;
+}
+
+void init_data(t_data *data)
+{
+	data->a = NULL;
+	data->b = NULL;
+	data->size_a = 0;
+	data->size_b = 0;
+	return ;
+}
+
 void	init_list(int argc, char *argv[], t_data *data)
 {
 	int i;
 	int j;
 	char **split_rslt;
-	long long nbr;
 
-	data->a = NULL;
-	data->b = NULL;
-	data->size_a = 0;
-	data->size_b = 0;
-	nbr = 0;
+	init_data(data);
 	i = 2;
-	if (is_strategy(argv[1]) == -1)
+	if (select_strategy(argv[1]) == -1)
 		i = 1;
 	while (i < argc)
 	{
-		// TODO refactor this part in a diffrent function
 		if(is_split_needed(argv[i]))
 		{
 			split_rslt = ft_split(argv[i]);
 			j = 0;
 			while (split_rslt[j])
 			{
-				nbr = ft_atoi(split_rslt[j]);
-				list_check_double(data->a, nbr);
-				ft_lstadd_back(&data->a, ft_lstnew(&nbr));
-				data->size_a++;
+				list_init_element(data->a, split_rslt[j]); // TODO maybe possible to put ft_atoi ft_lstadd_back and the incrementation in this function
+				j++;
 			}
 		}
 		else 
-		{
-			nbr = ft_atoi(split_rslt[j]);
-			list_check_double(data->a, nbr);
-			ft_lstadd_back(&data->a, ft_lstnew(&nbr));
-			data->size_a++;
-		}
+			list_init_element(data->a, argv[i]);
 		i++;
 	}
 	return ;

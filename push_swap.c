@@ -11,16 +11,39 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
+
+void print_stack(t_list *stack)
+{
+	t_list *current_stack = stack;
+
+	if(!current_stack)
+	{
+		printf("Nothing in the stack.\n\n");
+		return ;
+	}
+	printf("Stack contents:\n\n");
+	while (current_stack)
+	{
+		printf("Value: %lld, Address: %p, prev: %p, next: %p\n", current_stack->value, (void *)current_stack, current_stack->prev ,current_stack->next);
+		current_stack = current_stack->next;
+		if(current_stack)
+			printf("----------------------------------------------------------------------------\n");
+		else 
+			printf("\n");
+	}
+}
 
 int	main(int argc, char *argv[])
 {
 	t_data data;
 
 	parsing(argc, argv);
-	printf("Parsing done\nNo errors\n");
+	printf("Parsing done\nNo errors\n\n");
+	
+	init_list(argc, argv, &data);
+	select_strategy(argv[1]);
 
-	// init_list(argc, argv, &data);
-	// select_strategy(argv[1]);
+	print_stack(data.a);
+
 	return (0);
 }

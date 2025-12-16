@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "list_utils.h"
+#include "push_swap.h"
 
 t_list	*ft_lstnew(long long value)
 {
@@ -74,14 +74,4 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	(*lst)->prev = new;
     new->next = *lst;
     *lst = new;
-}
-
-void	list_check_double(t_list *lst, long long nbr)
-{
-    while (lst)
-    {
-        if (lst->value == nbr)
-            error_handler(0);
-        lst = lst->next;
-    }
 }

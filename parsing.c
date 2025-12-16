@@ -52,12 +52,14 @@ void parsing (int argc, char *argv[])
 	}
 }
 
-int	ft_atoi(const char *str)
+long long	ft_atoi(const char *str)
 {
 	int		i;
 	int		sign;
-	long	rslt;
+	long long	rslt;
 
+	if(str == "-9223372036854775807")
+		return (-9223372036854775807);
 	sign = 1;
 	i = 0;
 	rslt = 0;

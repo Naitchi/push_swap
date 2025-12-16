@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   push_swap.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/08 18:01:33 by bclairot          #+#    #+#             */
-/*   Updated: 2025/12/08 19:21:17 by bclairot         ###   ########.fr       */
+/*   Created: 2025/12/16 16:46:51 by bclairot          #+#    #+#             */
+/*   Updated: 2025/12/16 16:46:51 by bclairot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "list_utils.h"
-# include "parsing.h"
-# include "ft_split.h"
-# include "error_handler.h"
-# include "op.h"
-
 # include <stdlib.h>
 # include <unistd.h>
 
-// TODO delete before submission
+// TODO delete before submission and replace printf by ft_printf
 #include <stdio.h>
+
+typedef struct s_list
+{
+	long long		value;
+	struct s_list	*next;
+	struct s_list	*prev;
+}					t_list;
 
 typedef struct s_data
 {
@@ -32,5 +33,25 @@ typedef struct s_data
 	int				size_a;
 	int				size_b;
 }					t_data;
+
+char		**ft_split(char const *s);
+
+void		error_handler(char *str);
+
+t_list		*ft_lstnew(long long value);
+void		ft_lstdelone(t_list *lst);
+void		ft_lstadd_back(t_list **lst, t_list *new); // TODO maybe rename "new" variable look weird on my IDE, dont want it to create trouble
+void		ft_lstadd_front(t_list **lst, t_list *new); // TODO maybe rename "new" variable look weird on my IDE, dont want it to create trouble
+void		list_init_element(t_list *lst, t_data *data);
+t_list		*ft_lstlast(t_list *lst);
+t_list		*ft_lstfirst(t_list *lst); // a voir ? 
+
+int 		ft_isspace(char c);
+int 		is_split_needed(char *str);
+void 		parsing (int argc, char *argv[]);
+long long	ft_atoi(const char *str);
+
+void		init_list(int argc, char *argv[], t_data *data);
+int			select_strategy(char *str);
 
 #endif
