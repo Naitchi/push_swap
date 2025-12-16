@@ -54,8 +54,8 @@ void 		parsing (int argc, char *argv[]);
 long long	ft_atoi(const char *str);
 
 void		init_list(int argc, char *argv[], t_data *data);
-int			select_strategy(char *str);
+void		select_strategy(t_data *data,char *str);
 
-float compute_disorder(t_list *stack);
+float 		compute_disorder(t_list *stack);
 
 #endif

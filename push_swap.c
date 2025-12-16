@@ -41,9 +41,10 @@ int	main(int argc, char *argv[])
 	printf("Parsing done\nNo errors\n\n");
 	
 	init_list(argc, argv, &data);
-	select_strategy(argv[1]);
 
 	print_stack(data.a);
+
+	
 
 	return (0);
 }

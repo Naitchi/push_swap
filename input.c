@@ -26,19 +26,29 @@ int	ft_strcmp(const char *s1, const char *s2)
 	return (0);
 }
 
-int	select_strategy(char *str)
+void	select_strategy(t_data *data,char *str)
 {
 	int	i;
 
 	i = 0;
+	data->strategy = 4;
 	if (ft_strcmp(str, "--"))
 		return (-1);
 	else if (!ft_strcmp(&str[2], "simple"))
+	{
+		data->strategy = 1;
 		return (1);
+	}
 	else if (!ft_strcmp(&str[2], "medium"))
+	{
+		data->strategy = 2;
 		return (2);
+	}
 	else if (!ft_strcmp(&str[2], "complex"))
+	{
+		data->strategy = 3;
 		return (3);
+	}
 	else if (!ft_strcmp(&str[2], "adaptive"))
 		return (4);
 	return (-1);
@@ -79,7 +89,7 @@ void	init_list(int argc, char *argv[], t_data *data)
 
 	init_stack_data(data);
 	i = 2;
-	if (select_strategy(argv[1]) == -1)
+	if (select_strategy(data, argv[1]) == -1)
 		i = 1;
 	while (i < argc)
 	{
