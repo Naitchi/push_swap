@@ -62,7 +62,7 @@ void	list_init_element(t_list *lst, const char *str)
 	return ;
 }
 
-void init_data(t_data *data)
+void init_stack_data(t_data *data)
 {
 	data->a = NULL;
 	data->b = NULL;
@@ -77,7 +77,7 @@ void	init_list(int argc, char *argv[], t_data *data)
 	int j;
 	char **split_rslt;
 
-	init_data(data);
+	init_stack_data(data);
 	i = 2;
 	if (select_strategy(argv[1]) == -1)
 		i = 1;
@@ -89,7 +89,7 @@ void	init_list(int argc, char *argv[], t_data *data)
 			j = 0;
 			while (split_rslt[j])
 			{
-				list_init_element(data->a, split_rslt[j]); // TODO maybe possible to put ft_atoi ft_lstadd_back and the incrementation in this function
+				list_init_element(data->a, split_rslt[j]);
 				j++;
 			}
 		}

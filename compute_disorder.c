@@ -1,0 +1,38 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   compute_disorder.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/16 22:52:59 by bclairot          #+#    #+#             */
+/*   Updated: 2025/12/16 22:52:59 by bclairot         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "push_swap.h"
+
+float compute_disorder(t_list *stack)
+{
+    float mistakes;
+    float total_pairs; 
+    t_list *first;
+    t_list *second;
+
+    total_pairs = 0;
+    mistakes = 0;
+    first = stack;
+    second = first->next;
+    while (currant)
+    {
+        while (second)
+        {
+            total_pairs++;
+            if (first->value > second->value)
+                mistakes++;
+            second = second->next;
+        }            
+        first = first->next;
+    }
+    return (mistakes / total_pairs);
+}

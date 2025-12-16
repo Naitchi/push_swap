@@ -32,6 +32,8 @@ typedef struct s_data
 	t_list			*b;
 	int				size_a;
 	int				size_b;
+	int 			strategy;
+	float 			disorder_rate;
 }					t_data;
 
 char		**ft_split(char const *s);
@@ -53,5 +55,7 @@ long long	ft_atoi(const char *str);
 
 void		init_list(int argc, char *argv[], t_data *data);
 int			select_strategy(char *str);
+
+float compute_disorder(t_list *stack);
 
 #endif
