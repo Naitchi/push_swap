@@ -22,9 +22,9 @@ float compute_disorder(t_list *stack)
     total_pairs = 0;
     mistakes = 0;
     first = stack;
-    second = first->next;
-    while (currant)
+    while (first)
     {
+        second = first->next;
         while (second)
         {
             total_pairs++;
