@@ -12,12 +12,11 @@
 
 #include "push_swap.h"
 
-int	ft_strcmp(const char *s1, const char *s2)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int	i;
+	size_t	i = 0;
 
-	i = 0;
-	while (s1[i] || s2[i])
+	while (i < n && (s1[i] || s2[i]))
 	{
 		if (s1[i] != s2[i])
 			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
@@ -26,33 +25,6 @@ int	ft_strcmp(const char *s1, const char *s2)
 	return (0);
 }
 
-void	select_strategy(t_data *data,char *str)
-{
-	int	i;
-
-	i = 0;
-	data->strategy = 4;
-	if (ft_strcmp(str, "--"))
-		return (-1);
-	else if (!ft_strcmp(&str[2], "simple"))
-	{
-		data->strategy = 1;
-		return (1);
-	}
-	else if (!ft_strcmp(&str[2], "medium"))
-	{
-		data->strategy = 2;
-		return (2);
-	}
-	else if (!ft_strcmp(&str[2], "complex"))
-	{
-		data->strategy = 3;
-		return (3);
-	}
-	else if (!ft_strcmp(&str[2], "adaptive"))
-		return (4);
-	return (-1);
-}
 
 void	list_init_element(t_list *lst, const char *str)
 {
@@ -78,6 +50,8 @@ void init_stack_data(t_data *data)
 	data->b = NULL;
 	data->size_a = 0;
 	data->size_b = 0;
+	data->strategy = 0;
+	data->bench = 0;
 	return ;
 }
 
@@ -88,9 +62,7 @@ void	init_list(int argc, char *argv[], t_data *data)
 	char **split_rslt;
 
 	init_stack_data(data);
-	i = 2;
-	if (select_strategy(data, argv[1]) == -1)
-		i = 1;
+	i = init_flags(argc, argv, data) + 1;
 	while (i < argc)
 	{
 		if(is_split_needed(argv[i]))
@@ -107,5 +79,4 @@ void	init_list(int argc, char *argv[], t_data *data)
 			list_init_element(data->a, argv[i]);
 		i++;
 	}
-	return ;
 }

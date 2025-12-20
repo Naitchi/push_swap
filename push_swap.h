@@ -28,12 +28,15 @@ typedef struct s_list
 
 typedef struct s_data
 {
-	t_list			*a;
-	t_list			*b;
+	t_list			*start_a; // @CyDupire c'est possible de faire ca si tu veux je sais pas si ca t'arranges ou pas au pire restore
+	t_list			*start_b;
+	t_list			*end_a;
+	t_list			*end_b;
 	int				size_a;
 	int				size_b;
 	int 			strategy;
 	float 			disorder_rate;
+	int 			bench;
 }					t_data;
 
 char		**ft_split(char const *s);
@@ -53,6 +56,7 @@ int 		is_split_needed(char *str);
 void 		parsing (int argc, char *argv[]);
 long long	ft_atoi(const char *str);
 
+int			ft_strncmp(const char *s1, const char *s2, size_t n);
 void		init_list(int argc, char *argv[], t_data *data);
 void		select_strategy(t_data *data,char *str);
 
