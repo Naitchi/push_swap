@@ -1,10 +1,22 @@
-*This project has been created as part of the 42 curriculum by <cydupire>, <bclairot>.*
+*This project has been created as part of the 42 curriculum by cydupire, bclairot.*
 
 # push_swap
 
 ## Description
 
 This activity will make you sort data on a stack, with a limited set of instructions, using the lowest possible number of actions. To succeed you’ll have to manipulate various types of algorithms and choose the most appropriate solution (out of many) for optimized data sorting.
+
+## Start the project
+```shell
+# Clone the repository:
+git clone
+# Navigate to the project folder: 
+cd push_swap
+# Compile the program: 
+make
+# Run the program with a list of integers: 
+./push_swap 3 2 1 0 "10 5 -1"
+```
 
 ## Instructions
 
