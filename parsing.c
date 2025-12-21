@@ -39,6 +39,8 @@ void	parsing(int argc, char *argv[])
 	int	j;
 
 	i = 1;
+	while (is_a_flags(argv[i]) != -1)
+		i++;
 	j = 0;
 	if (argc <= 1)
 		error_handler(0);

@@ -31,7 +31,7 @@ int	is_a_flags(char *str)
 
 // Init flags in data and return the number of flags found
 // Exit with error if there is the same flag two times.
-int init_flags(int argc,char *argv[],t_data *data)
+int init_flags(int argc, char *argv[], t_data *data)
 {
     int nbr_flags;
     int flag_type;
@@ -48,7 +48,7 @@ int init_flags(int argc,char *argv[],t_data *data)
         else if (flag_type == 5 && !data->bench)
             data->bench = flag_type;
         else
-            error_handler(0);
+            return (nbr_flags);
         nbr_flags++;
     }
     if((data->bench && nbr_flags == 1) || !nbr_flags)
