@@ -17,7 +17,7 @@
 # include <unistd.h>
 
 // TODO delete before submission and replace printf by ft_printf
-#include <stdio.h>
+# include <stdio.h>
 
 typedef struct s_list
 {
@@ -39,27 +39,45 @@ typedef struct s_data
 	int 			bench;
 }					t_data;
 
-char		**ft_split(char const *s);
+typedef struct s_bench
+{
+	int				sa;
+	int				sb;
+	int				ss;
+	int				pa;
+	int				pb;
+	int				ra;
+	int				rb;
+	int				rr;
+	int				rra;
+	int				rrb;
+	int				rrr;
+}					t_bench;
 
-void		error_handler(char *str);
+char				**ft_split(char const *s);
 
-t_list		*ft_lstnew(long long value);
-void		ft_lstdelone(t_list *lst);
-void		ft_lstadd_back(t_list **lst, t_list *new); // TODO maybe rename "new" variable look weird on my IDE, dont want it to create trouble
-void		ft_lstadd_front(t_list **lst, t_list *new); // TODO maybe rename "new" variable look weird on my IDE, dont want it to create trouble
-void		list_init_element(t_list *lst, t_data *data);
-t_list		*ft_lstlast(t_list *lst);
-t_list		*ft_lstfirst(t_list *lst); // a voir ? 
+void				error_handler(char *str);
 
-int 		ft_isspace(char c);
-int 		is_split_needed(char *str);
-void 		parsing (int argc, char *argv[]);
-long long	ft_atoi(const char *str);
+t_list				*ft_lstnew(long long value);
+void				ft_lstdelone(t_list *lst);
+void				ft_lstadd_back(t_list **lst, t_list *new);
+// TODO maybe rename "new" variable look weird on my IDE,
+
+void				ft_lstadd_front(t_list **lst, t_list *new);
+// TODO maybe rename "new" variable look weird on my IDE,
+void				list_init_element(t_list *lst, t_data *data);
+t_list				*ft_lstlast(t_list *lst);
+t_list	*ft_lstfirst(t_list *lst); // a voir ?
+
+int					ft_isspace(char c);
+int					is_split_needed(char *str);
+void				parsing(int argc, char *argv[]);
+long long			ft_atoi(const char *str);
 
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
 void		init_list(int argc, char *argv[], t_data *data);
 void		select_strategy(t_data *data,char *str);
 
-float 		compute_disorder(t_list *stack);
+float				compute_disorder(t_list *stack);
 
 #endif
