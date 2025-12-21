@@ -6,7 +6,7 @@
 /*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 13:32:08 by bclairot          #+#    #+#             */
-/*   Updated: 2025/12/09 13:32:08 by bclairot         ###   ########.fr       */
+/*   Updated: 2025/12/21 15:47:05 by bclairot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,13 +128,13 @@ char	**ft_split(char const *s)
 //         if (!res)
 //         {
 //             printf("  -> (null)\n\n");
-//             continue;
+//             continue ;
 //         }
 //         if (!res[0])
 //         {
 //             printf("  -> (empty)\n\n");
 //             free(res);
-//             continue;
+//             continue ;
 //         }
 //         for (int i = 0; res[i]; i++)
 //         {

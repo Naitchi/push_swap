@@ -6,17 +6,18 @@
 /*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 17:53:39 by bclairot          #+#    #+#             */
-/*   Updated: 2025/12/08 20:13:37 by bclairot         ###   ########.fr       */
+/*   Updated: 2025/12/21 15:46:03 by bclairot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void print_stack(t_list *stack)
+void	print_stack(t_list *stack)
 {
-	t_list *current_stack = stack;
+	t_list	*current_stack;
 
-	if(!current_stack)
+	current_stack = stack;
+	if (!current_stack)
 	{
 		printf("Nothing in the stack.\n\n");
 		return ;
@@ -24,27 +25,24 @@ void print_stack(t_list *stack)
 	printf("Stack contents:\n\n");
 	while (current_stack)
 	{
-		printf("Value: %lld, Address: %p, prev: %p, next: %p\n", current_stack->value, (void *)current_stack, current_stack->prev ,current_stack->next);
+		printf("Value: %lld, Address: %p, prev: %p, next: %p\n",
+			current_stack->value, (void *)current_stack, current_stack->prev,
+			current_stack->next);
 		current_stack = current_stack->next;
-		if(current_stack)
-			printf("----------------------------------------------------------------------------\n");
-		else 
+		if (current_stack)
+			printf("-----------------------------------------------------\n");
+		else
 			printf("\n");
 	}
 }
 
 int	main(int argc, char *argv[])
 {
-	t_data data;
+	t_data	data;
 
 	parsing(argc, argv);
 	printf("Parsing done\nNo errors\n\n");
-	
 	init_list(argc, argv, &data);
-
 	print_stack(data.a);
-
-	
-
 	return (0);
 }

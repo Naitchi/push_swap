@@ -6,7 +6,7 @@
 /*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 18:18:49 by bclairot          #+#    #+#             */
-/*   Updated: 2025/12/08 18:40:37 by bclairot         ###   ########.fr       */
+/*   Updated: 2025/12/21 15:47:16 by bclairot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,13 @@
 
 void	error_handler(char *str)
 {
-	int i;
-	i = 0;
+	int	i;
 
+	i = 0;
 	if (!str)
 		str = "Error\n";
-
 	while (str[i])
 		i++;
-
 	write(2, str, i);
 	exit(1);
 }
-
-
