@@ -28,8 +28,8 @@ typedef struct s_list
 
 typedef struct s_data
 {
-	t_list			*start_a; // @CyDupire c'est possible de faire ca si tu veux je sais pas si ca t'arranges ou pas au pire restore
-	t_list			*start_b;
+	t_list			*a; // @CyDupire c'est possible de faire ca si tu veux je sais pas si ca t'arranges ou pas au pire restore
+	t_list			*b;
 	t_list			*end_a;
 	t_list			*end_b;
 	int				size_a;
@@ -62,21 +62,23 @@ t_list				*ft_lstnew(long long value);
 void				ft_lstdelone(t_list *lst);
 void				ft_lstadd_back(t_list **lst, t_list *new);
 // TODO maybe rename "new" variable look weird on my IDE,
-
 void				ft_lstadd_front(t_list **lst, t_list *new);
 // TODO maybe rename "new" variable look weird on my IDE,
-void				list_init_element(t_list *lst, t_data *data);
+void				list_init_element(t_data *data, const char *str);
 t_list				*ft_lstlast(t_list *lst);
-t_list	*ft_lstfirst(t_list *lst); // a voir ?
+t_list				*ft_lstfirst(t_list *lst); // a voir ?
 
 int					ft_isspace(char c);
 int					is_split_needed(char *str);
 void				parsing(int argc, char *argv[]);
 long long			ft_atoi(const char *str);
 
-int			ft_strncmp(const char *s1, const char *s2, size_t n);
-void		init_list(int argc, char *argv[], t_data *data);
-void		select_strategy(t_data *data,char *str);
+int					ft_strncmp(const char *s1, const char *s2, size_t n);
+void				init_list(int argc, char *argv[], t_data *data);
+void				select_strategy(t_data *data,char *str);
+
+int					is_a_flags(char *str);
+int 				init_flags(int argc,char *argv[],t_data *data);
 
 float				compute_disorder(t_list *stack);
 

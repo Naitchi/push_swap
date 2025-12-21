@@ -43,6 +43,8 @@ int	main(int argc, char *argv[])
 	parsing(argc, argv);
 	printf("Parsing done\nNo errors\n\n");
 	init_list(argc, argv, &data);
+	printf("data : strategy : %d, bench: %d, disorder rate: ", data.strategy, data.bench);
+	printf("%d.%d%%\n", (int)(data.disorder_rate*100), (int)((data.disorder_rate*100-(int)(data.disorder_rate*100))*100)); // Calcul important pour pouvoir afficher sans %f
 	print_stack(data.a);
 	return (0);
 }

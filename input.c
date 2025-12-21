@@ -25,12 +25,14 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	return (0);
 }
 
-void	list_init_element(t_list *lst, const char *str)
+void	list_init_element(t_data *data, const char *str)
 {
 	long long	nbr;
+	t_list *lst;
 
 	nbr = 0;
 	nbr = ft_atoi(str);
+	lst = data->a;
 	while (lst)
 	{
 		if (lst->value == nbr)
@@ -49,6 +51,7 @@ void	init_stack_data(t_data *data)
 	data->size_a = 0;
 	data->size_b = 0;
 	data->strategy = 0;
+	data->disorder_rate = 0;
 	data->bench = 0;
 	return ;
 }
@@ -69,12 +72,13 @@ void	init_list(int argc, char *argv[], t_data *data)
 			j = 0;
 			while (split_rslt[j])
 			{
-				list_init_element(data->a, split_rslt[j]);
+				list_init_element(data, split_rslt[j]);
 				j++;
 			}
 		}
 		else
-			list_init_element(data->a, argv[i]);
+			list_init_element(data, argv[i]);
 		i++;
 	}
+	data->disorder_rate = compute_disorder(data->a);
 }
