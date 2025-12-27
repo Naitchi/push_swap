@@ -39,7 +39,7 @@ void print_parameters(t_data data)
     if(data.strategy == 1)
         write(2, "Simple / O(n^2)\n" ,16);
     else if(data.strategy == 2)
-        write(2, "Medium / O(n√n)\n" ,16);
+        write(2, "Medium / O(n√n)\n" ,18);
     else if(data.strategy == 3)
         write(2, "Complex / O(n log n)\n" ,21);
     else if (data.strategy == 4)

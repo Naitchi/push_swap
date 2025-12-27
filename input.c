@@ -91,5 +91,7 @@ void	init_list(int argc, char *argv[], t_data *data, t_bench *bench)
 			list_init_element(data, argv[i]);
 		i++;
 	}
+	if (data->strategy == 0)
+		data->strategy = 4;
 	data->disorder_rate = compute_disorder(data->a);
 }
