@@ -39,12 +39,13 @@ void	print_stack(t_list *stack)
 int	main(int argc, char *argv[])
 {
 	t_data	data;
+	t_bench bench;
 
 	parsing(argc, argv);
 	printf("Parsing done\nNo errors\n\n");
-	init_list(argc, argv, &data);
-	printf("data : strategy : %d, bench: %d, disorder rate: ", data.strategy, data.bench);
-	printf("%d.%d%%\n", (int)(data.disorder_rate*100), (int)((data.disorder_rate*100-(int)(data.disorder_rate*100))*100)); // Calcul important pour pouvoir afficher sans %f
+	init_list(argc, argv, &data, &bench);
 	print_stack(data.a);
+
+	show_bench(data, bench);
 	return (0);
 }
