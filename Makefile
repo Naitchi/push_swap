@@ -30,7 +30,7 @@ $(DIR_OBJS):
 	mkdir -p $@
 
 clean:
-	rm -f $(DIR_OBJS)
+	rm -rf $(DIR_OBJS)
 
 fclean: clean
 	rm -f $(NAME)	
