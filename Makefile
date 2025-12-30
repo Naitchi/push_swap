@@ -1,18 +1,20 @@
 CC = cc 
 CFLAGS = -Wall -Wextra -Werror -g3 -MMD -MP
-SRCS = error_handler.c \
-	   input.c \
-	   list_utils.c \
-	   op_push.c \
-	   op_reverse_rotate.c \
-	   op_rotate.c \
-	   op_swap.c \
-	   push_swap.c \
-	   parsing.c
-
+SRCS = 	bench.c \
+		compute_disorder.c \
+		error_handler.c \
+		flags.c \
+		ft_split.c \
+		input.c \
+		list_utils.c \
+		parsing.c \
+		push_swap.c
+# op_push.c \
+op_reverse_rotate.c \
+op_rotate.c \
+op_swap.c
 DIR_OBJS = objects/
-OBJS = $(SRCS:.c=.o)
-OBJECTS = $(addprefix $(DIR_OBJS))
+OBJS = $(addprefix $(DIR_OBJS),$(SRCS:.c=.o))
 DEPS = $(OBJS:.o=.d)
 NAME = push_swap
 
@@ -28,7 +30,7 @@ $(DIR_OBJS):
 	mkdir -p $@
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(DIR_OBJS)
 
 fclean: clean
 	rm -f $(NAME)	

@@ -65,7 +65,7 @@ long long	ft_atoi(const char *str)
 	int			sign;
 	long long	rslt;
 
-	if (str == "-9223372036854775807")
+	if (ft_strncmp(str, "-9223372036854775807", 21))
 		return (-9223372036854775807);
 	sign = 1;
 	i = 0;
