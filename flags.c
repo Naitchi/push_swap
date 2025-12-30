@@ -50,5 +50,7 @@ int init_flags(int argc, char *argv[], t_data *data)
             return (nbr_flags);
         nbr_flags++;
     }
+    if(nbr_flags + 1 == argc)
+        exit(1);
     return (nbr_flags);
 }

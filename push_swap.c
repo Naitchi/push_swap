@@ -42,7 +42,7 @@ int	main(int argc, char *argv[])
 	t_bench bench;
 
 	parsing(argc, argv);
-	printf("Parsing done\nNo errors\n\n");
+	//printf("Parsing done\nNo errors\n\n");
 	init_list(argc, argv, &data, &bench);
 	print_stack(data.a);
 
