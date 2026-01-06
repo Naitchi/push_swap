@@ -6,34 +6,43 @@
 /*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 18:30:14 by bclairot          #+#    #+#             */
-/*   Updated: 2025/12/10 16:25:47 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/06 11:14:08 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "list_utils.h"
-
-void	ft_op_push(t_list **lst_a, t_list **lst_b, char which_stack)
-{
-	ft_printf("p%c", which_stack);
-	if (which_stack == 'a')
-	{
-		if (*lst_b)
-			ft_pushing(lst_b, lst_a);
-	}
-	if (which_stack == 'b')
-	{
-		if (*lst_a)
-			ft_pushing(lst_a, lst_b);
-	}
-	return;
-}
+#include "push_swap.h"
 
 void	ft_pushing(t_list **lst_src, t_list **lst_dst)
 {
+	t_list	*ptr;
 
-	(*lst_src)->next->prev = NULL;
-	(*lst_src)->next = lst_dst;
-	(*lst_dst)->prev = lst_src;
-	*lst_dst = *lst_src;
+	if (*lst_src)
+	{
+		ptr = *lst_src;
+		if ((*lst_src)->next != NULL)
+			(*lst_src)->next->prev = NULL;
+		*lst_src = (*lst_src)->next;
+		if (!*lst_dst)
+		{
+			*lst_dst = ft_lstnew(ptr->value);
+			return ;
+		}
+		else
+		{
+			ptr->next = *lst_dst;
+			(*lst_dst)->prev = ptr;
+			*lst_dst = ptr;
+		}
+	}
+	return ;
+}
+
+void	ft_op_push(t_data *data, char which_stack)
+{
+	printf("p%c", which_stack);
+	if (which_stack == 'a')
+		ft_pushing(&data->b, &data->a);
+	if (which_stack == 'b')
+		ft_pushing(&data->a, &data->b);
 	return ;
 }

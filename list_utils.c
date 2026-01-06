@@ -6,7 +6,7 @@
 /*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 18:06:18 by bclairot          #+#    #+#             */
-/*   Updated: 2025/12/21 15:46:38 by bclairot         ###   ########.fr       */
+/*   Updated: 2026/01/06 12:09:25 by bclairot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,6 @@ t_list	*ft_lstnew(long long value)
 	return (new);
 }
 
-void	ft_lstdelone(t_list *lst)
-{
-	if (!lst)
-		return ;
-	free(lst);
-}
-
 t_list	*ft_lstlast(t_list *lst)
 {
 	if (!lst)
@@ -41,7 +34,6 @@ t_list	*ft_lstlast(t_list *lst)
 	return (lst);
 }
 
-// peut-etre utile a supprimer sinon
 t_list	*ft_lstfirst(t_list *lst)
 {
 	if (!lst)
@@ -65,13 +57,4 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	ptr = ft_lstlast(*lst);
 	ptr->next = new;
 	new->prev = ptr;
-}
-
-void	ft_lstadd_front(t_list **lst, t_list *new)
-{
-	if (!new)
-		return ;
-	(*lst)->prev = new;
-	new->next = *lst;
-	*lst = new;
 }

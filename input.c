@@ -6,7 +6,7 @@
 /*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 18:15:35 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/06 11:58:48 by bclairot         ###   ########.fr       */
+/*   Updated: 2026/01/06 12:06:26 by bclairot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,10 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	return (0);
 }
 
-void	list_init_element(t_list *lst, const char *str)
+void	list_init_element(t_data *data, const char *str)
 {
 	long long	nbr;
+	t_list *lst;
 
 	nbr = 0;
 	nbr = ft_atoi(str);

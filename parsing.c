@@ -6,7 +6,7 @@
 /*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 19:32:29 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/06 11:30:49 by bclairot         ###   ########.fr       */
+/*   Updated: 2026/01/06 12:10:58 by bclairot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ long long	ft_atoi(const char *str)
 	int			sign;
 	long long	rslt;
 
-	if (ft_strncmp(str, "-9223372036854775808", 21) == 0)
+	if (ft_strncmp(str, "-9223372036854775807", 21) == 0)
 		return (-9223372036854775807);
 	sign = 1;
 	i = 0;

@@ -1,36 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   op_swap.c                                          :+:      :+:    :+:   */
+/*   ft_bubble_sort.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/08 18:30:09 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/06 11:14:43 by cydupire         ###   ########lyon.fr   */
+/*   Created: 2026/01/06 09:01:24 by cydupire          #+#    #+#             */
+/*   Updated: 2026/01/06 11:36:09 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_swapping(t_list **lst)
+void	ft_bubble_sort(t_data *data)
 {
-	long long	temp_value;
+	t_list		*ptr;
+	long long	i;
+	long long	size;
 
-	if (*lst && (*lst)->next != NULL)
+	ptr = data->a;
+	i = 0;
+	size = data->size_a;
+	while (ft_is_stack_sorted(data) != 1)
 	{
-		temp_value = (*lst)->value;
-		(*lst)->value = (*lst)->next->value;
-		(*lst)->next->value = temp_value;
+		while (i < size - 1)
+		{
+			if (ptr->value > ptr->next->value)
+				ft_op_swap(data, 'a');
+			ft_op_rotate(data, 'a');
+			ptr = data->a;
+			i++;
+		}
+		i = 0;
+		ft_op_rotate(data, 'a');
+		ptr = data->a;
 	}
-	return ;
-}
-
-void	ft_op_swap(t_data *data, char which_stack)
-{
-	printf("s%c", which_stack);
-	if (which_stack == 'a' || which_stack == 's')
-		ft_swapping(&data->a);
-	if (which_stack == 'b' || which_stack == 's')
-		ft_swapping(&data->b);
 	return ;
 }

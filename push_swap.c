@@ -6,7 +6,7 @@
 /*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 17:53:39 by bclairot          #+#    #+#             */
-/*   Updated: 2025/12/21 15:46:03 by bclairot         ###   ########.fr       */
+/*   Updated: 2026/01/06 12:11:23 by bclairot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,13 @@ int	main(int argc, char *argv[])
 	//printf("Parsing done\nNo errors\n\n");
 	init_list(argc, argv, &data, &bench);
 	print_stack(data.a);
+	print_stack(data.b);
+	printf("\n");
+	ft_bubble_sort(&data);
+	print_stack(data.a);
+	print_stack(data.b);
+	printf("\n");
+	
 
 	show_bench(data, bench);
 	return (0);

@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   op_swap.c                                          :+:      :+:    :+:   */
+/*   ft_is_stack_sorted.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/08 18:30:09 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/06 11:14:43 by cydupire         ###   ########lyon.fr   */
+/*   Created: 2026/01/06 09:02:05 by cydupire          #+#    #+#             */
+/*   Updated: 2026/01/06 09:21:37 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_swapping(t_list **lst)
+int	ft_is_stack_sorted(t_data *data)
 {
-	long long	temp_value;
+	t_list		*ptr;
 
-	if (*lst && (*lst)->next != NULL)
+	ptr = data->a;
+	while (ptr->next != NULL)
 	{
-		temp_value = (*lst)->value;
-		(*lst)->value = (*lst)->next->value;
-		(*lst)->next->value = temp_value;
+		if (ptr->value < ptr->next->value)
+			ptr = ptr->next;
+		else
+			return (0);
 	}
-	return ;
-}
-
-void	ft_op_swap(t_data *data, char which_stack)
-{
-	printf("s%c", which_stack);
-	if (which_stack == 'a' || which_stack == 's')
-		ft_swapping(&data->a);
-	if (which_stack == 'b' || which_stack == 's')
-		ft_swapping(&data->b);
-	return ;
+	if (data->b != NULL)
+		return (0);
+	else
+		return (1);
 }

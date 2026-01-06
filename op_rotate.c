@@ -6,36 +6,36 @@
 /*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 18:30:06 by bclairot          #+#    #+#             */
-/*   Updated: 2025/12/10 16:28:56 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/06 11:10:46 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "list_utils.h"
-
-void	ft_op_rotate(t_list **lst_a, t_list **lst_b, char which_stack)
-{
-	ft_printf("%c%c", 'r', which_stack);
-	if (which_stack == 'a' || which_stack == 'r')
-	{
-		if ((*lst_a)->next != NULL)
-			ft_rotating(lst_a);
-	}
-	if (which_stack == 'b' || which_stack == 'r')
-	{
-		if ((*lst_b)->next != NULL)
-			ft_rotating(lst_b);
-	}
-	return;
-}
+#include "push_swap.h"
 
 void	ft_rotating(t_list **lst)
 {
-	t_list	*ptr;
+	t_list	*ptr_first;
+	t_list	*ptr_last;
 
-	(*lst)->next->prev = NULL;
-	(*lst)->next = NULL;
-	ptr = ft_lstlast(*lst);
-	(*lst)->prev = ptr;
-	ptr->next = *lst;
-	*lst = ft_lstfirst(*lst);
+	if ((*lst)->next != NULL)
+	{
+		ptr_first = *lst;
+		*lst = (*lst)->next;
+		ptr_first->next->prev = NULL;
+		ptr_first->next = NULL;
+		ptr_last = ft_lstlast(*lst);
+		ptr_first->prev = ptr_last;
+		ptr_last->next = ptr_first;
+	}
+	return ;
+}
+
+void	ft_op_rotate(t_data *data, char which_stack)
+{
+	printf("%c%c", 'r', which_stack);
+	if (which_stack == 'a' || which_stack == 'r')
+		ft_rotating(&data->a);
+	if (which_stack == 'b' || which_stack == 'r')
+		ft_rotating(&data->b);
+	return ;
 }
