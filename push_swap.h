@@ -62,8 +62,7 @@ void				list_init_element(t_data *data, const char *str);
 t_list				*ft_lstnew(long long value);
 t_list				*ft_lstlast(t_list *lst);
 t_list				*ft_lstfirst(t_list *lst);
-void				ft_lstadd_back(t_list **lst, t_list *new);
-// TODO maybe rename "new" variable look weird on my IDE
+void				ft_lstadd_back(t_list **lst, t_list *new_elmt);
 
 int					ft_isspace(char c);
 int					is_split_needed(char *str);
@@ -82,14 +81,12 @@ float				compute_disorder(t_list *stack);
 
 void				show_bench(t_data data, t_bench bench);
 
-// to test op
 void				op_swap(t_data *data, char which_stack, t_bench *bench);
 void				op_push(t_data *data, char which_stack, t_bench *bench);
 void				op_rotate(t_data *data, char which_stack, t_bench *bench);
 void				op_reverse_rotate(t_data *data, char which_stack,
 						t_bench *bench);
 
-// for bubble sort
 int					is_stack_sorted(t_data *data);
 void				bubble_sort(t_data *data, t_bench *bench);
 
