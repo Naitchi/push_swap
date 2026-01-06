@@ -73,7 +73,6 @@ long long			ft_atoi(const char *str);
 
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 void				init_list(int argc, char *argv[], t_data *data, t_bench *bench);
-void				select_strategy(t_data *data,char *str);
 
 int					is_a_flags(char *str);
 int 				init_flags(int argc,char *argv[],t_data *data);
