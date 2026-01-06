@@ -6,7 +6,7 @@
 /*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 17:53:39 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/06 14:55:46 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/06 15:29:04 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	print_stack(t_list *stack)
 	ft_printf("Stack contents:\n\n");
 	while (current_stack)
 	{
-		ft_printf("Value: %lld, Address: %p, prev: %p, next: %p\n",
+		ft_printf("Value: %d, Address: %p, prev: %p, next: %p\n",
 			current_stack->value, (void *)current_stack, current_stack->prev,
 			current_stack->next);
 		current_stack = current_stack->next;
