@@ -6,7 +6,7 @@
 /*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 18:15:35 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/06 12:06:26 by bclairot         ###   ########.fr       */
+/*   Updated: 2026/01/06 19:03:08 by bclairot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	list_init_element(t_data *data, const char *str)
 	return ;
 }
 
-void	init_stack_data(t_data *data, t_bench *bench)
+void	init_stack_data(t_data *data, t_bench *bench)//TODO ft_memset
 {
 	data->a = NULL;
 	data->b = NULL;

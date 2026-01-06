@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 17:53:39 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/06 14:02:49 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/06 19:16:20 by bclairot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,11 @@ int	main(int argc, char *argv[])
 	parsing(argc, argv);
 	// printf("Parsing done\nNo errors\n\n");
 	init_list(argc, argv, &data, &bench);
-	print_stack(data.a);
-	print_stack(data.b);
 	printf("\n");
-	ft_bubble_sort(&data, &bench);
-	print_stack(data.a);
-	print_stack(data.b);
+	// ft_bubble_sort(&data, &bench);
+	// print_stack(data.a);
+	// print_stack(data.b);
+	radix(&data, &bench);
 	printf("\n");
 	show_bench(data, bench);
 	return (0);

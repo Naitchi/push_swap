@@ -6,7 +6,7 @@
 /*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 19:32:29 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/06 12:10:58 by bclairot         ###   ########.fr       */
+/*   Updated: 2026/01/06 19:50:27 by bclairot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	parsing(int argc, char *argv[])
 		i++;
 	j = 0;
 	if (argc <= 1)
-		error_handler(0);
+        exit(1);
 	while (i < argc)
 	{
 		// printf("Parsing arg %d: %s\n", i, argv[i]);

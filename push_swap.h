@@ -94,4 +94,8 @@ void				ft_op_reverse_rotate(t_data *data, char which_stack,
 int					ft_is_stack_sorted(t_data *data);
 void				ft_bubble_sort(t_data *data, t_bench *bench);
 
+void				print_stack(t_list *stack);
+
+void				radix(t_data *data, t_bench *bench);
+
 #endif
