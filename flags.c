@@ -6,7 +6,7 @@
 /*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/20 20:11:03 by bclairot          #+#    #+#             */
-/*   Updated: 2025/12/20 20:11:03 by bclairot         ###   ########.fr       */
+/*   Updated: 2026/01/06 11:36:28 by bclairot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,10 @@ int init_flags(int argc, char *argv[], t_data *data)
             data->strategy = flag_type;
         else if (flag_type == 5 && !data->bench)
             data->bench = flag_type;
+        else if (flag_type > 0 && flag_type < 5  && data->strategy)
+            error_handler(0);
+        else if (flag_type == 5 && data->bench)
+            error_handler(0);
         else
             return (nbr_flags);
         nbr_flags++;

@@ -6,7 +6,7 @@
 /*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 12:41:16 by bclairot          #+#    #+#             */
-/*   Updated: 2025/12/27 12:41:16 by bclairot         ###   ########.fr       */
+/*   Updated: 2026/01/06 11:42:08 by bclairot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void print_parameters(t_data data)
         write(2, "Adaptive / " , 11);
         if(data.disorder_rate < 0.2)
             write(2, "O(n^2)\n", 7);
-        else if(data.disorder_rate <= 0.2 && data.disorder_rate < 0.5)
+        else if(data.disorder_rate >= 0.2 && data.disorder_rate < 0.5)
             write(2, "O(n√n)\n", 7);
         else 
             write(2, "O(n log n)\n", 11);
