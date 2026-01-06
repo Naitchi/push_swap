@@ -6,7 +6,7 @@
 /*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 17:53:39 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/06 14:12:37 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/06 14:55:46 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,21 @@ void	print_stack(t_list *stack)
 	current_stack = stack;
 	if (!current_stack)
 	{
-		printf("Nothing in the stack.\n\n");
+		ft_printf("Nothing in the stack.\n\n");
 		return ;
 	}
-	printf("Stack contents:\n\n");
+	ft_printf("Stack contents:\n\n");
 	while (current_stack)
 	{
-		printf("Value: %lld, Address: %p, prev: %p, next: %p\n",
+		ft_printf("Value: %lld, Address: %p, prev: %p, next: %p\n",
 			current_stack->value, (void *)current_stack, current_stack->prev,
 			current_stack->next);
 		current_stack = current_stack->next;
 		if (current_stack)
-			printf("-----------------------------------------------------\n");
+			ft_printf("%s",
+				"-----------------------------------------------------\n");
 		else
-			printf("\n");
+			ft_printf("\n");
 	}
 }
 
@@ -42,15 +43,14 @@ int	main(int argc, char *argv[])
 	t_bench	bench;
 
 	parsing(argc, argv);
-	// printf("Parsing done\nNo errors\n\n");
 	init_list(argc, argv, &data, &bench);
 	print_stack(data.a);
 	print_stack(data.b);
-	printf("\n");
+	ft_printf("\n");
 	bubble_sort(&data, &bench);
 	print_stack(data.a);
 	print_stack(data.b);
-	printf("\n");
+	ft_printf("\n");
 	show_bench(data, bench);
 	return (0);
 }

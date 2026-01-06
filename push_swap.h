@@ -55,7 +55,7 @@ typedef struct s_bench
 }					t_bench;
 
 char				**ft_split(char const *s);
-
+int					ft_printf(const char *str, ...);
 void				error_handler(char *str);
 void				list_init_element(t_data *data, const char *str);
 

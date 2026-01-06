@@ -6,7 +6,7 @@
 /*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 18:30:06 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/06 14:09:40 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/06 14:55:24 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	rotating(t_list **lst)
 
 void	op_rotate(t_data *data, char which_stack, t_bench *bench)
 {
-	printf("%c%c", 'r', which_stack);
+	ft_printf("%c%c", 'r', which_stack);
 	if (which_stack == 'a' || which_stack == 'r')
 		rotating(&data->a);
 	if (which_stack == 'b' || which_stack == 'r')

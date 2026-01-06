@@ -6,7 +6,7 @@
 /*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 18:30:14 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/06 14:10:29 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/06 14:55:16 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	pushing(t_list **lst_src, t_list **lst_dst)
 
 void	op_push(t_data *data, char which_stack, t_bench *bench)
 {
-	printf("p%c", which_stack);
+	ft_printf("p%c", which_stack);
 	if (which_stack == 'a')
 		pushing(&data->b, &data->a);
 	if (which_stack == 'b')
