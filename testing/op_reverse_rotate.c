@@ -6,12 +6,11 @@
 /*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 18:30:03 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/05 16:27:40 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/06 11:10:27 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
 
 void	ft_reverse_rotating(t_list **lst)
 {
@@ -27,16 +26,15 @@ void	ft_reverse_rotating(t_list **lst)
 		(*lst)->prev = ptr;
 		*lst = ptr;
 	}
-	return;
+	return ;
 }
 
-void	ft_op_reverse_rotate(t_list **lst_a, t_list **lst_b, char which_stack)
+void	ft_op_reverse_rotate(t_data *data, char which_stack)
 {
 	printf("%s%c", "rr", which_stack);
 	if (which_stack == 'a' || which_stack == 'r')
-		ft_reverse_rotating(lst_a);
+		ft_reverse_rotating(&data->a);
 	if (which_stack == 'b' || which_stack == 'r')
-		ft_reverse_rotating(lst_b);
-	return;
+		ft_reverse_rotating(&data->b);
+	return ;
 }
-

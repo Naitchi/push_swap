@@ -6,7 +6,7 @@
 /*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 18:30:06 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/05 16:19:58 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/06 11:10:46 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,17 +27,15 @@ void	ft_rotating(t_list **lst)
 		ptr_first->prev = ptr_last;
 		ptr_last->next = ptr_first;
 	}
-	return;
+	return ;
 }
 
-void	ft_op_rotate(t_list **lst_a, t_list **lst_b, char which_stack)
+void	ft_op_rotate(t_data *data, char which_stack)
 {
 	printf("%c%c", 'r', which_stack);
 	if (which_stack == 'a' || which_stack == 'r')
-			ft_rotating(lst_a);
+		ft_rotating(&data->a);
 	if (which_stack == 'b' || which_stack == 'r')
-		ft_rotating(lst_b);
-	return;
+		ft_rotating(&data->b);
+	return ;
 }
-
-
