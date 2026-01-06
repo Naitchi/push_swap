@@ -6,7 +6,7 @@
 /*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 18:30:06 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/06 15:21:25 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/06 15:52:17 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	op_rotate(t_data *data, char which_stack, t_bench *bench)
 		(*bench).ra++;
 	if (which_stack == 'b')
 		(*bench).rb++;
-	if (which_stack == 's')
+	if (which_stack == 'r')
 		(*bench).rr++;
 	return ;
 }
