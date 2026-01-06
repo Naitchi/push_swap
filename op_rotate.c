@@ -6,7 +6,7 @@
 /*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 18:30:06 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/06 11:10:46 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/06 14:00:42 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,18 @@ void	ft_rotating(t_list **lst)
 	return ;
 }
 
-void	ft_op_rotate(t_data *data, char which_stack)
+void	ft_op_rotate(t_data *data, char which_stack, t_bench *bench)
 {
 	printf("%c%c", 'r', which_stack);
 	if (which_stack == 'a' || which_stack == 'r')
 		ft_rotating(&data->a);
 	if (which_stack == 'b' || which_stack == 'r')
 		ft_rotating(&data->b);
+	if (which_stack == 'a')
+		(*bench).ra++;
+	if (which_stack == 'b')
+		(*bench).rb++;
+	if (which_stack == 's')
+		(*bench).rr++;
 	return ;
 }
