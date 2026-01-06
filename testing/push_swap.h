@@ -28,14 +28,13 @@ typedef struct s_list
 
 typedef struct s_data
 {
-	t_list *a;
-		// @CyDupire c'est possible de faire ca si tu veux je sais pas si ca t'arranges ou pas au pire restore
+	t_list			*a;
 	t_list			*b;
 	t_list			*end_a;
 	t_list			*end_b;
 	int				size_a;
 	int				size_b;
-	int				strategy;
+	long long int	strategy;
 	float			disorder_rate;
 	int				bench;
 }					t_data;
@@ -58,16 +57,13 @@ typedef struct s_bench
 char				**ft_split(char const *s);
 
 void				error_handler(char *str);
+void				list_init_element(t_data *data, const char *str);
 
 t_list				*ft_lstnew(long long value);
-void				ft_lstdelone(t_list *lst);
-void				ft_lstadd_back(t_list **lst, t_list *new);
-// TODO maybe rename "new" variable look weird on my IDE,
-void				ft_lstadd_front(t_list **lst, t_list *new);
-// TODO maybe rename "new" variable look weird on my IDE,
-void				list_init_element(t_data *data, const char *str);
 t_list				*ft_lstlast(t_list *lst);
-t_list	*ft_lstfirst(t_list *lst); // a voir ?
+t_list				*ft_lstfirst(t_list *lst);
+void				ft_lstadd_back(t_list **lst, t_list *new);
+// TODO maybe rename "new" variable look weird on my IDE
 
 int					ft_isspace(char c);
 int					is_split_needed(char *str);
