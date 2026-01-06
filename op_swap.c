@@ -6,7 +6,7 @@
 /*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 18:30:09 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/06 14:55:27 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/06 15:21:28 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	swapping(t_list **lst)
 
 void	op_swap(t_data *data, char which_stack, t_bench *bench)
 {
-	ft_printf("s%c", which_stack);
+	ft_printf("s%c\n", which_stack);
 	if (which_stack == 'a' || which_stack == 's')
 		swapping(&data->a);
 	if (which_stack == 'b' || which_stack == 's')

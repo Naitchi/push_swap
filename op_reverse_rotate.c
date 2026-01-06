@@ -6,7 +6,7 @@
 /*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 18:30:03 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/06 14:55:20 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/06 15:21:21 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	reverse_rotating(t_list **lst)
 
 void	op_reverse_rotate(t_data *data, char which_stack, t_bench *bench)
 {
-	ft_printf("%s%c", "rr", which_stack);
+	ft_printf("%s%c\n", "rr", which_stack);
 	if (which_stack == 'a' || which_stack == 'r')
 		reverse_rotating(&data->a);
 	if (which_stack == 'b' || which_stack == 'r')
