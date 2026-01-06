@@ -90,4 +90,9 @@ void	ft_op_push(t_list **lst_a, t_list **lst_b, char which_stack);
 void	ft_op_rotate(t_list **lst_a, t_list **lst_b, char which_stack);
 void	ft_op_reverse_rotate(t_list **lst_a, t_list **lst_b, char which_stack);
 
+
+// pour bubble sort
+int		ft_is_stack_sorted(t_data *data);
+void	ft_bubble_sort(t_data *data);
+
 #endif

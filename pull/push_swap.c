@@ -6,7 +6,7 @@
 /*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 17:53:39 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/05 16:29:21 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/06 09:28:36 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,34 +47,12 @@ int	main(int argc, char *argv[])
 	init_list(argc, argv, &data, &bench);
 	print_stack(data.a);
 	print_stack(data.b);
-	ft_op_swap(&data.a, &data.b, 'a');
 	printf("\n");
+	ft_bubble_sort(&data);
 	print_stack(data.a);
 	print_stack(data.b);
-	ft_op_push(&data.a, &data.b, 'b');
 	printf("\n");
-	print_stack(data.a);
-	print_stack(data.b);
-	ft_op_push(&data.a, &data.b, 'b');
-	printf("\n");
-	print_stack(data.a);
-	print_stack(data.b);
-	ft_op_push(&data.a, &data.b, 'b');
-	printf("\n");
-	print_stack(data.a);
-	print_stack(data.b);
-	ft_op_rotate(&data.a, &data.b, 'b');
-	printf("\n");
-	print_stack(data.a);
-	print_stack(data.b);
-	ft_op_reverse_rotate(&data.a, &data.b, 'b');
-	printf("\n");
-	print_stack(data.a);
-	print_stack(data.b);
-	ft_op_reverse_rotate(&data.a, &data.b, 'b');
-	printf("\n");
-	print_stack(data.a);
-	print_stack(data.b);
+	
 
 	show_bench(data, bench);
 	return (0);
