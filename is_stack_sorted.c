@@ -6,15 +6,15 @@
 /*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 09:02:05 by cydupire          #+#    #+#             */
-/*   Updated: 2026/01/06 09:21:37 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/06 14:12:02 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_is_stack_sorted(t_data *data)
+int	is_stack_sorted(t_data *data)
 {
-	t_list		*ptr;
+	t_list	*ptr;
 
 	ptr = data->a;
 	while (ptr->next != NULL)

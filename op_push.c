@@ -6,13 +6,13 @@
 /*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 18:30:14 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/06 14:01:34 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/06 14:10:29 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_pushing(t_list **lst_src, t_list **lst_dst)
+void	pushing(t_list **lst_src, t_list **lst_dst)
 {
 	t_list	*ptr;
 
@@ -37,13 +37,13 @@ void	ft_pushing(t_list **lst_src, t_list **lst_dst)
 	return ;
 }
 
-void	ft_op_push(t_data *data, char which_stack, t_bench *bench)
+void	op_push(t_data *data, char which_stack, t_bench *bench)
 {
 	printf("p%c", which_stack);
 	if (which_stack == 'a')
-		ft_pushing(&data->b, &data->a);
+		pushing(&data->b, &data->a);
 	if (which_stack == 'b')
-		ft_pushing(&data->a, &data->b);
+		pushing(&data->a, &data->b);
 	if (which_stack == 'a')
 		(*bench).pa++;
 	if (which_stack == 'b')

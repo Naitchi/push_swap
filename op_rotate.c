@@ -6,13 +6,13 @@
 /*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 18:30:06 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/06 14:00:42 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/06 14:09:40 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_rotating(t_list **lst)
+void	rotating(t_list **lst)
 {
 	t_list	*ptr_first;
 	t_list	*ptr_last;
@@ -30,13 +30,13 @@ void	ft_rotating(t_list **lst)
 	return ;
 }
 
-void	ft_op_rotate(t_data *data, char which_stack, t_bench *bench)
+void	op_rotate(t_data *data, char which_stack, t_bench *bench)
 {
 	printf("%c%c", 'r', which_stack);
 	if (which_stack == 'a' || which_stack == 'r')
-		ft_rotating(&data->a);
+		rotating(&data->a);
 	if (which_stack == 'b' || which_stack == 'r')
-		ft_rotating(&data->b);
+		rotating(&data->b);
 	if (which_stack == 'a')
 		(*bench).ra++;
 	if (which_stack == 'b')

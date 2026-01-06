@@ -6,7 +6,7 @@
 /*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 17:53:39 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/06 14:02:49 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/06 14:12:37 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	main(int argc, char *argv[])
 	print_stack(data.a);
 	print_stack(data.b);
 	printf("\n");
-	ft_bubble_sort(&data, &bench);
+	bubble_sort(&data, &bench);
 	print_stack(data.a);
 	print_stack(data.b);
 	printf("\n");

@@ -75,7 +75,7 @@ void				init_list(int argc, char *argv[], t_data *data,
 						t_bench *bench);
 void				select_strategy(t_data *data, char *str);
 
-int					is_a_flags(char *str);
+int					is_a_flag(char *str);
 int					init_flags(int argc, char *argv[], t_data *data);
 
 float				compute_disorder(t_list *stack);
@@ -83,15 +83,14 @@ float				compute_disorder(t_list *stack);
 void				show_bench(t_data data, t_bench bench);
 
 // to test op
-void				ft_op_swap(t_data *data, char which_stack, t_bench *bench);
-void				ft_op_push(t_data *data, char which_stack, t_bench *bench);
-void				ft_op_rotate(t_data *data, char which_stack,
-						t_bench *bench);
-void				ft_op_reverse_rotate(t_data *data, char which_stack,
+void				op_swap(t_data *data, char which_stack, t_bench *bench);
+void				op_push(t_data *data, char which_stack, t_bench *bench);
+void				op_rotate(t_data *data, char which_stack, t_bench *bench);
+void				op_reverse_rotate(t_data *data, char which_stack,
 						t_bench *bench);
 
 // for bubble sort
-int					ft_is_stack_sorted(t_data *data);
-void				ft_bubble_sort(t_data *data, t_bench *bench);
+int					is_stack_sorted(t_data *data);
+void				bubble_sort(t_data *data, t_bench *bench);
 
 #endif
