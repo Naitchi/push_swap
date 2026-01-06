@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printint.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 15:17:20 by cydupire          #+#    #+#             */
-/*   Updated: 2025/11/28 10:23:50 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/06 12:14:14 by bclairot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

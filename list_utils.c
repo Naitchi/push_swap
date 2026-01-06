@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   list_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 18:06:18 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/06 11:34:46 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/06 12:09:25 by bclairot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ t_list	*ft_lstlast(t_list *lst)
 	return (lst);
 }
 
-// peut-etre utile a supprimer sinon
 t_list	*ft_lstfirst(t_list *lst)
 {
 	if (!lst)
