@@ -34,9 +34,9 @@ typedef struct s_data
 	t_list			*end_b;
 	int				size_a;
 	int				size_b;
-	int 			strategy;
-	float 			disorder_rate;
-	int 			bench;
+	int				strategy;
+	float			disorder_rate;
+	int				bench;
 }					t_data;
 
 typedef struct s_bench
@@ -83,13 +83,15 @@ float				compute_disorder(t_list *stack);
 void				show_bench(t_data data, t_bench bench);
 
 // to test op
-void				ft_op_swap(t_data *data, char which_stack);
-void				ft_op_push(t_data *data, char which_stack);
-void				ft_op_rotate(t_data *data, char which_stack);
-void				ft_op_reverse_rotate(t_data *data, char which_stack);
+void				ft_op_swap(t_data *data, char which_stack, t_bench *bench);
+void				ft_op_push(t_data *data, char which_stack, t_bench *bench);
+void				ft_op_rotate(t_data *data, char which_stack,
+						t_bench *bench);
+void				ft_op_reverse_rotate(t_data *data, char which_stack,
+						t_bench *bench);
 
 // for bubble sort
 int					ft_is_stack_sorted(t_data *data);
-void				ft_bubble_sort(t_data *data);
+void				ft_bubble_sort(t_data *data, t_bench *bench);
 
 #endif
