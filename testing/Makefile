@@ -12,7 +12,9 @@ SRCS = 	bench.c \
 		op_push.c \
 		op_reverse_rotate.c \
 		op_rotate.c \
-		op_swap.c
+		op_swap.c \
+		ft_bubble_sort.c \
+		ft_is_stack_sorted.c
 DIR_OBJS = objects/
 OBJS = $(addprefix $(DIR_OBJS),$(SRCS:.c=.o))
 DEPS = $(OBJS:.o=.d)
