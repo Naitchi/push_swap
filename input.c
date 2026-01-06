@@ -6,7 +6,7 @@
 /*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 18:15:35 by bclairot          #+#    #+#             */
-/*   Updated: 2025/12/21 15:46:49 by bclairot         ###   ########.fr       */
+/*   Updated: 2026/01/06 11:31:01 by bclairot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,37 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	return (0);
 }
 
-void	list_init_element(t_data *data, const char *str)
+void	select_strategy(t_data *data, char *str)
+{
+	int	i;
+
+	i = 0;
+	data->strategy = 4;
+	if (ft_strcmp(str, "--"))
+		return (-1);
+	else if (!ft_strcmp(&str[2], "simple"))
+	{
+		data->strategy = 1;
+		return (1);
+	}
+	else if (!ft_strcmp(&str[2], "medium"))
+	{
+		data->strategy = 2;
+		return (2);
+	}
+	else if (!ft_strcmp(&str[2], "complex"))
+	{
+		data->strategy = 3;
+		return (3);
+	}
+	else if (!ft_strcmp(&str[2], "adaptive"))
+		return (4);
+	return (-1);
+}
+
+void	list_init_element(t_list *lst, const char *str)
 {
 	long long	nbr;
-	t_list *lst;
 
 	nbr = 0;
 	nbr = ft_atoi(str);

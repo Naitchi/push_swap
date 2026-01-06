@@ -60,10 +60,10 @@ void				error_handler(char *str);
 
 t_list				*ft_lstnew(long long value);
 void				ft_lstdelone(t_list *lst);
+// TODO maybe rename "new" variable look weird on my IDE
 void				ft_lstadd_back(t_list **lst, t_list *new);
-// TODO maybe rename "new" variable look weird on my IDE,
+// TODO maybe rename "new" variable look weird on my IDE
 void				ft_lstadd_front(t_list **lst, t_list *new);
-// TODO maybe rename "new" variable look weird on my IDE,
 void				list_init_element(t_data *data, const char *str);
 t_list				*ft_lstlast(t_list *lst);
 t_list				*ft_lstfirst(t_list *lst); // a voir ?
