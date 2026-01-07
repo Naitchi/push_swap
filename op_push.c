@@ -6,7 +6,7 @@
 /*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 18:30:14 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/06 15:21:17 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/07 11:47:07 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,12 @@ void	pushing(t_list **lst_src, t_list **lst_dst)
 		if ((*lst_src)->next != NULL)
 			(*lst_src)->next->prev = NULL;
 		*lst_src = (*lst_src)->next;
-		if (!*lst_dst)
+		ptr->next = *lst_dst;
+		if (ptr->next)
 		{
-			*lst_dst = ft_lstnew(ptr->value);
-			return ;
+			ptr->next->prev = ptr;
 		}
-		else
-		{
-			ptr->next = *lst_dst;
-			(*lst_dst)->prev = ptr;
-			*lst_dst = ptr;
-		}
+		*lst_dst = ptr;
 	}
 	return ;
 }

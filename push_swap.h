@@ -89,5 +89,6 @@ void				op_reverse_rotate(t_data *data, char which_stack,
 
 int					is_stack_sorted(t_data *data);
 void				bubble_sort(t_data *data, t_bench *bench);
+void				bucket_ins_sort(t_data *data, t_bench *bench);
 
 #endif

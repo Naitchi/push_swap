@@ -29,3 +29,6 @@ obj/
 
 # Temporary files
 *.tmp
+
+# Files for testing
+args.txt
