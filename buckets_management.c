@@ -6,7 +6,7 @@
 /*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 14:35:27 by cydupire          #+#    #+#             */
-/*   Updated: 2026/01/07 17:47:08 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/07 17:55:13 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ int	*create_array(t_data *data, int nb_values)
 		while (ptr != NULL)
 		{
 			if (ptr->value > array[i])
+				// error, the stak needs to be in the reversed order.
 				if (is_value_present(ptr->value, array, i) == 0)
 					array[i] = ptr->value;
 			ptr = ptr->next;
