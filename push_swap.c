@@ -6,7 +6,7 @@
 /*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 17:53:39 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/07 11:43:54 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/07 13:40:49 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,6 @@ int	main(int argc, char *argv[])
 	print_stack(data.b);
 	ft_printf("\n");
 	show_bench(data, bench);
+	ft_lstclear(&data.b);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 15:38:26 by cydupire          #+#    #+#             */
-/*   Updated: 2026/01/07 11:50:39 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/07 14:31:05 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	find_nb_buckets(t_data *data)
 	return (i - 1);
 }
 
-// check if rotate or revrot is more appropriate to fetch the element
+// check if rotate or rev_rot is more appropriate to fetch the element
 int	value_present(int value, int *values, int size)
 {
 	int	i;
@@ -36,21 +36,21 @@ int	value_present(int value, int *values, int size)
 	}
 	return (0);
 }
-void	ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, int n)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
 	while (i < n)
 	{
-		*(unsigned char *)s = '\0';
+		*(unsigned char *)s = 0;
 		i++;
 		s++;
 	}
 	return ;
 }
 
-int	*find_values_bucket(t_data *data, int nb_values)
+int	*create_array(t_data *data, int nb_values)
 {
 	t_list	*ptr;
 	int		*values;
@@ -59,16 +59,16 @@ int	*find_values_bucket(t_data *data, int nb_values)
 	ptr = data->a;
 	i = 0;
 	values = malloc(sizeof(int) * nb_values);
-	ft_bzero(values, nb_values);
 	if (!values)
 		return (NULL);
+	ft_bzero(values, (nb_values * sizeof(int)));
 	while (i < nb_values)
 	{
 		while (ptr != NULL)
 		{
-			if (ptr->value > values[i] && value_present(ptr->value, values,
-					i) == 0)
-				values[i] = ptr->value;
+			if (ptr->value > values[i])
+				if (value_present(ptr->value, values, i) == 0)
+					values[i] = ptr->value;
 			ptr = ptr->next;
 		}
 		ptr = data->a;
@@ -79,10 +79,10 @@ int	*find_values_bucket(t_data *data, int nb_values)
 
 void	bucket_ins_sort(t_data *data, t_bench *bench)
 {
-	int i;
-	int nb_buckets;
-	int nb_values;
-	int *temp_array;
+	int	i;
+	int	nb_buckets;
+	int	nb_values;
+	int	*temp_array;
 
 	i = 0;
 	nb_buckets = find_nb_buckets(data);
@@ -91,7 +91,9 @@ void	bucket_ins_sort(t_data *data, t_bench *bench)
 	{
 		while (nb_buckets > 1)
 		{
-			temp_array = find_values_bucket(data, nb_values);
+			temp_array = create_array(data, nb_values);
+			// if (temp_array == NULL)
+			// 	exit;  to check
 			while (i < nb_values)
 			{
 				if (value_present(data->a->value, temp_array, nb_values) == 1)

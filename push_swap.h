@@ -63,6 +63,7 @@ t_list				*ft_lstnew(long long value);
 t_list				*ft_lstlast(t_list *lst);
 t_list				*ft_lstfirst(t_list *lst);
 void				ft_lstadd_back(t_list **lst, t_list *new_elmt);
+void				ft_lstclear(t_list **lst);
 
 int					ft_isspace(char c);
 int					is_split_needed(char *str);
