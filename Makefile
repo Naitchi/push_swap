@@ -15,7 +15,8 @@ SRCS = 	bench.c \
 		op_swap.c \
 		bubble_sort.c \
 		is_stack_sorted.c \
-		bucket_ins_sort.c
+		bucket_ins_sort.c \
+		complex.c
 DIR_PF = ft_printf/
 SRCS_PF = $(addprefix $(DIR_PF), ft_printf.c ft_printint.c ft_printhexa.c ft_printchar.c ft_printstr.c \
 	ft_printunsint.c ft_printptr.c ft_unsitoa.c ft_itoa.c)

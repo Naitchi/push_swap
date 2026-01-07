@@ -6,7 +6,7 @@
 /*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 09:01:24 by cydupire          #+#    #+#             */
-/*   Updated: 2026/01/07 13:44:22 by bclairot         ###   ########.fr       */
+/*   Updated: 2026/01/07 16:39:43 by bclairot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void	bubble_sort(t_data *data, t_bench *bench)
 		{
 			if (data->a->value > data->a->next->value)
 				op_swap(data, 'a', bench);
+			if (is_stack_sorted(data) == 1)
+				return ;
 			op_rotate(data, 'a', bench);
 			i++;
 		}

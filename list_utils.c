@@ -6,7 +6,7 @@
 /*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 18:06:18 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/07 13:44:27 by bclairot         ###   ########.fr       */
+/*   Updated: 2026/01/07 16:17:46 by bclairot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_list	*ft_lstnew(long long value)
 	if (!new)
 		return (NULL);
 	new->value = value;
+	new->index = 0;
 	new->next = NULL;
 	new->prev = NULL;
 	return (new);
@@ -45,7 +46,7 @@ t_list	*ft_lstfirst(t_list *lst)
 
 void	ft_lstadd_back(t_list **lst, t_list *new_elmt)
 {
-	t_list *ptr;
+	t_list	*ptr;
 
 	if (!new_elmt)
 		return ;
