@@ -6,7 +6,7 @@
 /*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 18:06:18 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/06 19:22:32 by bclairot         ###   ########.fr       */
+/*   Updated: 2026/01/07 13:44:27 by bclairot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,18 +43,18 @@ t_list	*ft_lstfirst(t_list *lst)
 	return (lst);
 }
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstadd_back(t_list **lst, t_list *new_elmt)
 {
-	t_list	*ptr;
+	t_list *ptr;
 
-	if (!new)
+	if (!new_elmt)
 		return ;
 	if (!(*lst))
 	{
-		*lst = new;
+		*lst = new_elmt;
 		return ;
 	}
 	ptr = ft_lstlast(*lst);
-	ptr->next = new;
-	new->prev = ptr;
+	ptr->next = new_elmt;
+	new_elmt->prev = ptr;
 }
