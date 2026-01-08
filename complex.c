@@ -6,7 +6,7 @@
 /*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 17:06:15 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/08 15:54:55 by bclairot         ###   ########.fr       */
+/*   Updated: 2026/01/08 17:01:26 by bclairot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@ static void	push_everything_from_b_to_a(t_data *data, t_bench *bench)
 		op_push(data, 'a', bench);
 }
 
-static int	get_size_stack(t_list *st)
+static int	get_size_stack(t_list *lst)
 {
 	int	i;
 
 	i = 0;
-	while (st->next)
+	while (lst->next)
 	{
-		st = st->next;
+		lst = lst->next;
 		i++;
 	}
 	return (i);
@@ -55,7 +55,7 @@ void	radix(t_data *data, t_bench *bench)
 		int size = get_size_stack(data->a);
 		while (i <= size)
 		{
-			if (!(((data->a->value) >> j) & 1))
+			if (!(((data->a->index) >> j) & 1))
 				op_push(data, 'b', bench);
 			else
 				op_rotate(data, 'a', bench);
