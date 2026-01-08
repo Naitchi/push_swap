@@ -94,4 +94,8 @@ void				bucket_ins_sort(t_data *data, t_bench *bench);
 
 void				radix(t_data *data, t_bench *bench);
 
+void				give_index(t_data *data);
+
+void				print_stack(t_list *stack);
+
 #endif

@@ -6,7 +6,7 @@
 /*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 18:15:35 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/06 19:03:08 by bclairot         ###   ########.fr       */
+/*   Updated: 2026/01/08 15:40:02 by bclairot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t	i = 0;
+	size_t	i;
 
+	i = 0;
 	while (i < n && (s1[i] || s2[i]))
 	{
 		if (s1[i] != s2[i])
@@ -28,7 +29,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 void	list_init_element(t_data *data, const char *str)
 {
 	long long	nbr;
-	t_list *lst;
+	t_list		*lst;
 
 	nbr = 0;
 	nbr = ft_atoi(str);
@@ -44,7 +45,7 @@ void	list_init_element(t_data *data, const char *str)
 	return ;
 }
 
-void	init_stack_data(t_data *data, t_bench *bench)//TODO ft_memset
+void	init_stack_data(t_data *data, t_bench *bench) // TODO ft_memset
 {
 	data->a = NULL;
 	data->b = NULL;
@@ -53,16 +54,16 @@ void	init_stack_data(t_data *data, t_bench *bench)//TODO ft_memset
 	data->strategy = 0;
 	data->disorder_rate = 0;
 	data->bench = 0;
-	bench->sa = 0;	
+	bench->sa = 0;
 	bench->sb = 0;
-	bench->ss = 0;	
-	bench->pa = 0;	
-	bench->pb = 0;	
+	bench->ss = 0;
+	bench->pa = 0;
+	bench->pb = 0;
 	bench->ra = 0;
-	bench->rb = 0;	
+	bench->rb = 0;
 	bench->rr = 0;
 	bench->rra = 0;
-	bench->rrb = 0;	
+	bench->rrb = 0;
 	bench->rrr = 0;
 	return ;
 }
@@ -91,6 +92,7 @@ void	init_list(int argc, char *argv[], t_data *data, t_bench *bench)
 			list_init_element(data, argv[i]);
 		i++;
 	}
+	give_index(data);
 	if (data->strategy == 0)
 		data->strategy = 4;
 	data->disorder_rate = compute_disorder(data->a);
