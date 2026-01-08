@@ -6,7 +6,7 @@
 /*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 14:35:27 by cydupire          #+#    #+#             */
-/*   Updated: 2026/01/08 16:31:18 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/08 17:14:48 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ int	*create_array(t_data *data, int nb_values)
 		// 	i++;
 		// }
 		// ptr_value = ptr_value->next;
+		// plus petit indice, indice + 1 +i
 	}
 	return (array);
 }
