@@ -6,7 +6,7 @@
 /*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 15:38:26 by cydupire          #+#    #+#             */
-/*   Updated: 2026/01/08 11:07:57 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/08 16:14:21 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	bucket_ins_sort(t_data *data, t_bench *bench)
 	i = 0;
 	j = 0;
 	buck.buckets = find_nb_buckets(data);
+	buck.mod = data->size_a % buck.buckets;
 	while (is_stack_sorted(data) != 1)
 	{
 		while (i < buck.buckets)
@@ -41,7 +42,7 @@ void	bucket_ins_sort(t_data *data, t_bench *bench)
 			}
 			i++;
 			free(buck.array);
-			i = 0;
+			j = 0;
 		}
 		while (data->a != NULL)
 			op_push(data, 'b', bench);

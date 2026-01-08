@@ -6,7 +6,7 @@
 /*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 14:35:27 by cydupire          #+#    #+#             */
-/*   Updated: 2026/01/08 11:06:42 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/08 16:31:18 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,27 +52,30 @@ int	*create_array(t_data *data, int nb_values)
 	if (!array)
 		error_handler(0);
 	ft_bzero(array, (nb_values * sizeof(int)));
-	while (i < nb_values && ptr_value != NULL)
+	while (i < nb_values)
 	{
-		while (ptr_runner != NULL)
-		{
-			if (ptr_value->value < ptr_runner->value)
-				smallest = ptr_value->value;
-			ptr_runner = ptr_runner->next;
-		}
-		if (smallest == ptr_value->value)
-		{
-			array[i] = smallest;
-			i++;
-		}
-		ptr_value = ptr_value->next;
-		ptr_runner = ptr_runner->next;
+		// if (is_value_present(ptr_value->value, array, nb_values) == 0)
+		// {
+		// 	smallest = ptr_value->value;
+		// 	while (ptr_runner != NULL)
+		// 	{
+		// 		if (smallest > ptr_runner->value)
+		// 			smallest = 0;
+		// 		ptr_runner = ptr_runner->next;
+		// 	}
+		// }
+		// if (smallest > 0)
+		// {
+		// 	array[i] = smallest;
+		// 	i++;
+		// }
+		// ptr_value = ptr_value->next;
 	}
 	return (array);
 }
+
 void	find_nb_values(t_data *data, t_buckets *buck)
 {
-	buck->mod = data->size_a % buck->buckets;
 	if (buck->mod != 0)
 	{
 		buck->values = (data->size_a / buck->buckets) + 1;
