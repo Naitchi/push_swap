@@ -1,5 +1,5 @@
 CC = cc 
-CFLAGS = -Wall -Wextra -Werror -g3 -MMD -MP
+CFLAGS = -Wall -Wextra -Werror -g3 -MMD -MP -fsanitize=address
 SRCS = 	bench.c \
 		compute_disorder.c \
 		error_handler.c \

@@ -6,7 +6,7 @@
 /*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 14:35:27 by cydupire          #+#    #+#             */
-/*   Updated: 2026/01/07 17:55:13 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/08 11:06:42 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,37 +38,48 @@ int	is_value_present(int value, int *array, int size)
 
 int	*create_array(t_data *data, int nb_values)
 {
-	t_list	*ptr;
+	t_list	*ptr_value;
+	t_list	*ptr_runner;
 	int		*array;
+	int		smallest;
 	int		i;
 
-	ptr = data->a;
+	ptr_value = data->a;
+	ptr_runner = data->a->next;
 	i = 0;
+	smallest = 0;
 	array = malloc(sizeof(int) * nb_values);
 	if (!array)
 		error_handler(0);
 	ft_bzero(array, (nb_values * sizeof(int)));
-	while (i < nb_values)
+	while (i < nb_values && ptr_value != NULL)
 	{
-		while (ptr != NULL)
+		while (ptr_runner != NULL)
 		{
-			if (ptr->value > array[i])
-				// error, the stak needs to be in the reversed order.
-				if (is_value_present(ptr->value, array, i) == 0)
-					array[i] = ptr->value;
-			ptr = ptr->next;
+			if (ptr_value->value < ptr_runner->value)
+				smallest = ptr_value->value;
+			ptr_runner = ptr_runner->next;
 		}
-		ptr = data->a;
-		i++;
+		if (smallest == ptr_value->value)
+		{
+			array[i] = smallest;
+			i++;
+		}
+		ptr_value = ptr_value->next;
+		ptr_runner = ptr_runner->next;
 	}
 	return (array);
 }
 void	find_nb_values(t_data *data, t_buckets *buck)
 {
-	if (data->size_a % buck->buckets != 0)
-		buck->values = buck->buckets + 1;
+	buck->mod = data->size_a % buck->buckets;
+	if (buck->mod != 0)
+	{
+		buck->values = (data->size_a / buck->buckets) + 1;
+		buck->mod--;
+	}
 	else
-		buck->values = buck->buckets;
+		buck->values = data->size_a / buck->buckets;
 }
 
 void	update_buckets(t_data *data, t_buckets *buck)

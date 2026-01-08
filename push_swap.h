@@ -58,6 +58,7 @@ typedef struct s_buckets
 {
 	int				buckets;
 	int				values;
+	int				mod;
 	int				*array;
 }					t_buckets;
 
