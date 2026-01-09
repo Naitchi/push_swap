@@ -47,16 +47,13 @@ static int	ft_multi(int len)
 static char	*ft_conv(char *str, int n, int len)
 {
 	int	i;
-	int	neg;
 
 	i = 0;
-	neg = 0;
 	if (n < 0)
 	{
 		str[i] = '-';
 		i++;
 		n = n * -1;
-		neg = 1;
 	}
 	while (i < (len))
 	{
@@ -88,9 +85,7 @@ char	*ft_itoa(int n)
 {
 	int		len;
 	char	*str;
-	int		i;
 
-	i = 0;
 	len = ft_check_len(n);
 	str = malloc((len + 1) * sizeof(char));
 	if (str == NULL)
