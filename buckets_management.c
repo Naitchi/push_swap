@@ -6,7 +6,7 @@
 /*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 14:35:27 by cydupire          #+#    #+#             */
-/*   Updated: 2026/01/09 09:32:01 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/09 11:25:10 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	find_nb_buckets(t_data *data)
 }
 int	find_smallest(t_list *lst)
 {
-	int	smallest;
+	unsigned int	smallest;
 
 	smallest = lst->index;
 	while (lst)

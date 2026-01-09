@@ -6,29 +6,30 @@
 /*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 15:38:26 by cydupire          #+#    #+#             */
-/*   Updated: 2026/01/09 11:12:06 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/09 11:25:10 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// check if rotate or rev_rot is more appropriate to fetch the element
+int	is_value_present(int value, int *array, int size)
 
-void	pushing_into_bucket(t_data *data, t_bench *bench, t_buckets *buck)
 {
-	int	j;
+	int i;
 
-	j = 0;
-	while (j < buck->values)
+	i = 0;
+
+	while (i < size)
+
 	{
-		if (is_value_present(data->a->index, buck->array, buck->values) == 1)
-		{
-			op_push(data, 'b', bench);
-			j++;
-		}
-		else
-			rotate_or_reverse(data, bench, buck);
+		if (value == array[i])
+
+			return (1);
+
+		i++;
 	}
+
+	return (0);
 }
 
 int	nb_rot_needed(t_list *lst, t_buckets *buck, int order)
@@ -37,13 +38,15 @@ int	nb_rot_needed(t_list *lst, t_buckets *buck, int order)
 	int		nb;
 	int		found;
 
+	nb = 0;
+	found = 0;
 	if (order == 0)
 		ptr = lst;
 	else
 		ptr = ft_lstlast(lst);
 	while (ptr && found == 0)
 	{
-		if (!is_value_present(lst->index, buck->array, buck->values) == 0)
+		if (is_value_present(lst->index, buck->array, buck->values) == 1)
 		{
 			if (order == 0)
 				ptr = ptr->next;
@@ -70,14 +73,27 @@ void	rotate_or_reverse(t_data *data, t_bench *bench, t_buckets *buck)
 		op_reverse_rotate(data, 'a', bench);
 }
 
+void	pushing_into_bucket(t_data *data, t_bench *bench, t_buckets *buck)
+{
+	int	j;
+
+	j = 0;
+	while (j < buck->values)
+	{
+		if (is_value_present(data->a->index, buck->array, buck->values) == 1)
+		{
+			op_push(data, 'b', bench);
+			j++;
+		}
+		else
+			rotate_or_reverse(data, bench, buck);
+	}
+}
+
 void	bucket_ins_sort(t_data *data, t_bench *bench)
 {
 	int			i;
 	t_buckets	buck;
-	int			i;
-	int			nb_buckets;
-	int			nb_values;
-	int			*temp_array;
 
 	i = 0;
 	buck.buckets = find_nb_buckets(data);
