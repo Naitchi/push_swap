@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	error_handler(char *str)
+void	error_handler(char *str) // TODO modifier les parametres pour free aussi ?
 {
 	int	i;
 
