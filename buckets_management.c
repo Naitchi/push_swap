@@ -6,7 +6,7 @@
 /*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 14:35:27 by cydupire          #+#    #+#             */
-/*   Updated: 2026/01/08 17:14:48 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/09 09:32:01 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,56 +21,37 @@ int	find_nb_buckets(t_data *data)
 		i++;
 	return (i - 1);
 }
-
-int	is_value_present(int value, int *array, int size)
+int	find_smallest(t_list *lst)
 {
-	int	i;
+	int	smallest;
 
-	i = 0;
-	while (i < size)
+	smallest = lst->index;
+	while (lst)
 	{
-		if (value == array[i])
-			return (1);
-		i++;
+		if (lst->index < smallest)
+			smallest = lst->index;
+		lst = lst->next;
 	}
-	return (0);
+	return (smallest);
 }
 
 int	*create_array(t_data *data, int nb_values)
 {
-	t_list	*ptr_value;
-	t_list	*ptr_runner;
-	int		*array;
-	int		smallest;
-	int		i;
+	int	*array;
+	int	smallest;
+	int	i;
 
-	ptr_value = data->a;
-	ptr_runner = data->a->next;
 	i = 0;
 	smallest = 0;
 	array = malloc(sizeof(int) * nb_values);
 	if (!array)
 		error_handler(0);
 	ft_bzero(array, (nb_values * sizeof(int)));
+	smallest = find_smallest(data->a);
 	while (i < nb_values)
 	{
-		// if (is_value_present(ptr_value->value, array, nb_values) == 0)
-		// {
-		// 	smallest = ptr_value->value;
-		// 	while (ptr_runner != NULL)
-		// 	{
-		// 		if (smallest > ptr_runner->value)
-		// 			smallest = 0;
-		// 		ptr_runner = ptr_runner->next;
-		// 	}
-		// }
-		// if (smallest > 0)
-		// {
-		// 	array[i] = smallest;
-		// 	i++;
-		// }
-		// ptr_value = ptr_value->next;
-		// plus petit indice, indice + 1 +i
+		array[i] = smallest + i;
+		i++;
 	}
 	return (array);
 }
