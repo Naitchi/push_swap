@@ -46,7 +46,6 @@ void	parsing(int argc, char *argv[])
 		exit(1);
 	while (i < argc)
 	{
-		// printf("Parsing arg %d: %s\n", i, argv[i]);
 		j = 0;
 		while (argv[i][j])
 		{

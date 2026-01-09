@@ -16,9 +16,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-// TODO delete before submission and replace printf by ft_printf
-# include <stdio.h>
-
 typedef struct s_list
 {
 	long long		value;
