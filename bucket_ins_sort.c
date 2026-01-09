@@ -6,7 +6,7 @@
 /*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 15:38:26 by cydupire          #+#    #+#             */
-/*   Updated: 2026/01/09 15:55:31 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/09 16:54:27 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,17 +38,11 @@ void	insert_to_a(t_data *data, t_bench *bench)
 		else if (data->b->index > data->a->index)
 		{
 			while (data->b->index > data->a->index)
-			{
 				op_reverse_rotate(data, 'a', bench);
-			}
+			while (data->b->index > ft_lstlast(data->a)->index)
+				op_rotate(data, 'a', bench);
 			op_push(data, 'a', bench);
 		}
-		else
-			while (data->b->index > ft_lstlast(data->a)->index)
-			{
-				op_rotate(data, 'a', bench);
-			}
-		op_push(data, 'a', bench);
 	}
 }
 
