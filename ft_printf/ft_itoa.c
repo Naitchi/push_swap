@@ -6,15 +6,15 @@
 /*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 17:11:55 by cydupire          #+#    #+#             */
-/*   Updated: 2025/11/19 15:42:23 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/06 14:42:20 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 static int	ft_check_len(int n)
 {
-	int		len;
+	int	len;
 
 	len = 0;
 	if (n < 0)
@@ -46,8 +46,8 @@ static int	ft_multi(int len)
 
 static char	*ft_conv(char *str, int n, int len)
 {
-	int		i;
-	int		neg;
+	int	i;
+	int	neg;
 
 	i = 0;
 	neg = 0;

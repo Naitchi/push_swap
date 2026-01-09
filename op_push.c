@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   op_push.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 18:30:14 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/06 14:01:34 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/07 13:45:01 by bclairot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_pushing(t_list **lst_src, t_list **lst_dst)
+void	pushing(t_list **lst_src, t_list **lst_dst)
 {
 	t_list	*ptr;
 
@@ -22,28 +22,23 @@ void	ft_pushing(t_list **lst_src, t_list **lst_dst)
 		if ((*lst_src)->next != NULL)
 			(*lst_src)->next->prev = NULL;
 		*lst_src = (*lst_src)->next;
-		if (!*lst_dst)
+		ptr->next = *lst_dst;
+		if (ptr->next)
 		{
-			*lst_dst = ft_lstnew(ptr->value);
-			return ;
+			ptr->next->prev = ptr;
 		}
-		else
-		{
-			ptr->next = *lst_dst;
-			(*lst_dst)->prev = ptr;
-			*lst_dst = ptr;
-		}
+		*lst_dst = ptr;
 	}
 	return ;
 }
 
-void	ft_op_push(t_data *data, char which_stack, t_bench *bench)
+void	op_push(t_data *data, char which_stack, t_bench *bench)
 {
-	printf("p%c", which_stack);
+	ft_printf("p%c\n", which_stack);
 	if (which_stack == 'a')
-		ft_pushing(&data->b, &data->a);
+		pushing(&data->b, &data->a);
 	if (which_stack == 'b')
-		ft_pushing(&data->a, &data->b);
+		pushing(&data->a, &data->b);
 	if (which_stack == 'a')
 		(*bench).pa++;
 	if (which_stack == 'b')

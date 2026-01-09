@@ -22,6 +22,7 @@
 typedef struct s_list
 {
 	long long		value;
+	unsigned int	index;
 	struct s_list	*next;
 	struct s_list	*prev;
 }					t_list;
@@ -55,15 +56,14 @@ typedef struct s_bench
 }					t_bench;
 
 char				**ft_split(char const *s);
-
+int					ft_printf(const char *str, ...);
 void				error_handler(char *str);
 void				list_init_element(t_data *data, const char *str);
 
 t_list				*ft_lstnew(long long value);
 t_list				*ft_lstlast(t_list *lst);
 t_list				*ft_lstfirst(t_list *lst);
-void				ft_lstadd_back(t_list **lst, t_list *new);
-// TODO maybe rename "new" variable look weird on my IDE
+void				ft_lstadd_back(t_list **lst, t_list *new_elmt);
 
 int					ft_isspace(char c);
 int					is_split_needed(char *str);
@@ -75,23 +75,27 @@ void				init_list(int argc, char *argv[], t_data *data,
 						t_bench *bench);
 void				select_strategy(t_data *data, char *str);
 
-int					is_a_flags(char *str);
+int					is_a_flag(char *str);
 int					init_flags(int argc, char *argv[], t_data *data);
 
 float				compute_disorder(t_list *stack);
 
 void				show_bench(t_data data, t_bench bench);
 
-// to test op
-void				ft_op_swap(t_data *data, char which_stack, t_bench *bench);
-void				ft_op_push(t_data *data, char which_stack, t_bench *bench);
-void				ft_op_rotate(t_data *data, char which_stack,
-						t_bench *bench);
-void				ft_op_reverse_rotate(t_data *data, char which_stack,
+void				op_swap(t_data *data, char which_stack, t_bench *bench);
+void				op_push(t_data *data, char which_stack, t_bench *bench);
+void				op_rotate(t_data *data, char which_stack, t_bench *bench);
+void				op_reverse_rotate(t_data *data, char which_stack,
 						t_bench *bench);
 
-// for bubble sort
-int					ft_is_stack_sorted(t_data *data);
-void				ft_bubble_sort(t_data *data, t_bench *bench);
+int					is_stack_sorted(t_data *data);
+void				bubble_sort(t_data *data, t_bench *bench);
+void				bucket_ins_sort(t_data *data, t_bench *bench);
+
+void				radix(t_data *data, t_bench *bench);
+
+void				give_index(t_data *data);
+
+void				print_stack(t_list *stack);
 
 #endif

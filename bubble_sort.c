@@ -1,39 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bubble_sort.c                                   :+:      :+:    :+:   */
+/*   bubble_sort.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 09:01:24 by cydupire          #+#    #+#             */
-/*   Updated: 2026/01/06 14:03:06 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/07 16:39:43 by bclairot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_bubble_sort(t_data *data, t_bench *bench)
+void	bubble_sort(t_data *data, t_bench *bench)
 {
-	t_list		*ptr;
-	long long	i;
-	long long	size;
+	int	i;
 
-	ptr = data->a;
 	i = 0;
-	size = data->size_a;
-	while (ft_is_stack_sorted(data) != 1)
+	while (is_stack_sorted(data) != 1)
 	{
-		while (i < size - 1)
+		while (i < data->size_a - 1)
 		{
-			if (ptr->value > ptr->next->value)
-				ft_op_swap(data, 'a', bench);
-			ft_op_rotate(data, 'a', bench);
-			ptr = data->a;
+			if (data->a->value > data->a->next->value)
+				op_swap(data, 'a', bench);
+			if (is_stack_sorted(data) == 1)
+				return ;
+			op_rotate(data, 'a', bench);
 			i++;
 		}
 		i = 0;
-		ft_op_rotate(data, 'a', bench);
-		ptr = data->a;
+		op_rotate(data, 'a', bench);
 	}
 	return ;
 }

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   flags.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/20 20:11:03 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/06 12:05:19 by bclairot         ###   ########.fr       */
+/*   Updated: 2026/01/06 14:11:09 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	is_a_flags(char *str)
+int	is_a_flag(char *str)
 {
 	if (!str || ft_strncmp(str, "--", 2) != 0)
 		return (-1);
@@ -41,7 +41,7 @@ int init_flags(int argc, char *argv[], t_data *data)
     flag_type = 0;
     while (nbr_flags + 1 < argc && flag_type != -1)
     {
-        flag_type = is_a_flags(argv[nbr_flags + 1]);
+        flag_type = is_a_flag(argv[nbr_flags + 1]);
         if (flag_type > 0 && flag_type < 5  && !data->strategy)
             data->strategy = flag_type;
         else if (flag_type == 5 && !data->bench)

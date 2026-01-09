@@ -6,7 +6,7 @@
 /*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 18:06:18 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/06 12:09:25 by bclairot         ###   ########.fr       */
+/*   Updated: 2026/01/08 15:25:47 by bclairot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_list	*ft_lstnew(long long value)
 	if (!new)
 		return (NULL);
 	new->value = value;
+	new->index = 0;
 	new->next = NULL;
 	new->prev = NULL;
 	return (new);
@@ -43,18 +44,18 @@ t_list	*ft_lstfirst(t_list *lst)
 	return (lst);
 }
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstadd_back(t_list **lst, t_list *new_elmt)
 {
 	t_list	*ptr;
 
-	if (!new)
+	if (!new_elmt)
 		return ;
 	if (!(*lst))
 	{
-		*lst = new;
+		*lst = new_elmt;
 		return ;
 	}
 	ptr = ft_lstlast(*lst);
-	ptr->next = new;
-	new->prev = ptr;
+	ptr->next = new_elmt;
+	new_elmt->prev = ptr;
 }
