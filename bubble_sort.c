@@ -6,7 +6,7 @@
 /*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 09:01:24 by cydupire          #+#    #+#             */
-/*   Updated: 2026/01/07 11:49:52 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/09 10:55:31 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void	bubble_sort(t_data *data, t_bench *bench)
 		{
 			if (data->a->value > data->a->next->value)
 				op_swap(data, 'a', bench);
+			if (is_stack_sorted(data) == 1)
+				return ;
 			op_rotate(data, 'a', bench);
 			i++;
 		}

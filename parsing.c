@@ -6,7 +6,7 @@
 /*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 19:32:29 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/06 14:11:09 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/09 11:00:27 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,23 +34,25 @@ void	parsing(int argc, char *argv[]) {
   int i;
   int j;
 
-  i = 1;
-  while (is_a_flag(argv[i]) != -1)
-    i++;
-  j = 0;
-  if (argc <= 1)
-    error_handler(0);
-  while (i < argc) {
-    // printf("Parsing arg %d: %s\n", i, argv[i]);
-    j = 0;
-    while (argv[i][j]) {
-      if ((argv[i][j] < '0' || argv[i][j] > '9') && argv[i][j] != '-' &&
-          argv[i][j] != '+' && !ft_isspace(argv[i][j]))
-        error_handler(0);
-      j++;
-    }
-    i++;
-  }
+	i = 1;
+	while (is_a_flag(argv[i]) != -1)
+		i++;
+	j = 0;
+	if (argc <= 1)
+		exit(1);
+	while (i < argc)
+	{
+		// printf("Parsing arg %d: %s\n", i, argv[i]);
+		j = 0;
+		while (argv[i][j])
+		{
+			if ((argv[i][j] < '0' || argv[i][j] > '9') && argv[i][j] != '-'
+				&& argv[i][j] != '+' && !ft_isspace(argv[i][j]))
+				error_handler(0);
+			j++;
+		}
+		i++;
+	}
 }
 
 long long	ft_atoi(const char *str) {

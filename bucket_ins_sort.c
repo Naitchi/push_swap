@@ -6,7 +6,7 @@
 /*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 15:38:26 by cydupire          #+#    #+#             */
-/*   Updated: 2026/01/09 10:50:04 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/09 11:12:06 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,10 @@ void	bucket_ins_sort(t_data *data, t_bench *bench)
 {
 	int			i;
 	t_buckets	buck;
+	int			i;
+	int			nb_buckets;
+	int			nb_values;
+	int			*temp_array;
 
 	i = 0;
 	buck.buckets = find_nb_buckets(data);

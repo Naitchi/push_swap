@@ -22,6 +22,7 @@
 typedef struct s_list
 {
 	long long		value;
+	unsigned int	index;
 	struct s_list	*next;
 	struct s_list	*prev;
 }					t_list;
@@ -104,5 +105,11 @@ void				bucket_ins_sort(t_data *data, t_bench *bench);
 void				update_buckets(t_data *data, t_buckets *buck);
 int					find_nb_buckets(t_data *data);
 int					is_value_present(int value, int *array, int size);
+
+void				radix(t_data *data, t_bench *bench);
+
+void				give_index(t_data *data);
+
+void				print_stack(t_list *stack);
 
 #endif
