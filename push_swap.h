@@ -105,7 +105,11 @@ void				bucket_ins_sort(t_data *data, t_bench *bench);
 void				update_buckets(t_data *data, t_buckets *buck);
 int					find_nb_buckets(t_data *data);
 int					is_value_present(int value, int *array, int size);
-int					rotate_or_reverse(t_data *data, t_buckets *buck);
+int					rot_or_rev_buck(t_data *data, t_buckets *buck);
+int					find_min(t_list *lst);
+int					find_max(t_list *lst);
+
+int					rot_or_rev(t_data *data, unsigned int index);
 
 void				radix(t_data *data, t_bench *bench);
 

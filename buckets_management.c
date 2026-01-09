@@ -6,52 +6,56 @@
 /*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 14:35:27 by cydupire          #+#    #+#             */
-/*   Updated: 2026/01/09 12:19:24 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/09 14:41:18 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	find_nb_buckets(t_data *data)
+int	find_min(t_list *lst)
 {
-	int	i;
+	unsigned int	min;
 
-	i = 1;
-	while (i * i <= data->size_a)
-		i++;
-	return (i - 1);
-}
-
-int	find_smallest(t_list *lst)
-{
-	unsigned int	smallest;
-
-	smallest = lst->index;
+	min = lst->index;
 	while (lst)
 	{
-		if (lst->index < smallest)
-			smallest = lst->index;
+		if (lst->index < min)
+			min = lst->index;
 		lst = lst->next;
 	}
-	return (smallest);
+	return (min);
+}
+
+int	find_max(t_list *lst)
+{
+	unsigned int	max;
+
+	max = lst->index;
+	while (lst)
+	{
+		if (lst->index > max)
+			max = lst->index;
+		lst = lst->next;
+	}
+	return (max);
 }
 
 int	*create_array(t_data *data, int nb_values)
 {
 	int	*array;
-	int	smallest;
+	int	min;
 	int	i;
 
 	i = 0;
-	smallest = 0;
+	min = 0;
 	array = malloc(sizeof(int) * nb_values);
 	if (!array)
 		error_handler(0);
 	ft_bzero(array, (nb_values * sizeof(int)));
-	smallest = find_smallest(data->a);
+	min = find_min(data->a);
 	while (i < nb_values)
 	{
-		array[i] = smallest + i;
+		array[i] = min + i;
 		i++;
 	}
 	return (array);
