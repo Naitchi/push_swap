@@ -41,7 +41,7 @@ static int	get_max_bit(t_data *data)
 	return (max_bit);
 }
 
-void	radix(t_data *data, t_bench *bench)
+void	complex(t_data *data, t_bench *bench)
 {
 	int max_bit;
 	int i;
