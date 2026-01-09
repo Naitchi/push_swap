@@ -17,6 +17,7 @@ SRCS = 	bench.c \
 		is_stack_sorted.c \
 		bucket_ins_sort.c \
 		buckets_management.c \
+		utils_rotate.c \
 		utils_libft.c \
 		complex.c \
 		index.c

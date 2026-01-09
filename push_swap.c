@@ -6,7 +6,7 @@
 /*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 17:53:39 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/09 11:32:43 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/09 13:36:38 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,16 +45,16 @@ int	main(int argc, char *argv[])
 	parsing(argc, argv);
 	// printf("Parsing done\nNo errors\n\n");
 	init_list(argc, argv, &data, &bench);
-	print_stack(data.a);
-	print_stack(data.b);
-	ft_printf("\n");
+	// print_stack(data.a);
+	// print_stack(data.b);
+	// ft_printf("\n");
 	// bubble_sort(&data, &bench);
 	bucket_ins_sort(&data, &bench);
 	// radix(&data, &bench);
 	print_stack(data.a);
 	print_stack(data.b);
 	ft_printf("\n");
-	// show_bench(data, bench);
+	show_bench(data, bench);
 	ft_lstclear(&data.b);
 	return (0);
 }
