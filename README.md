@@ -21,12 +21,26 @@ make
 ## Instructions
 
 - Your program must be written in C and follow the 42 Norm.
+
 - You must use two stacks: **stack a** (initial input) and **stack b** (auxiliary).
+
 - Only the predefined operations are allowed:
-  - **Swap:** `sa`, `sb`, `ss`
-  - **Push:** `pa`, `pb`
-  - **Rotate:** `ra`, `rb`, `rr`
-  - **Reverse rotate:** `rra`, `rrb`, `rrr`
+  - **Swap:** 
+    - `sa`: Swap the first two elements of stack a
+    - `sb`: Swap the first two elements of stack b
+    - `ss`: Perform sa and sb simultaneously
+  - **Push:** 
+    - `pa`: Push the top element of stack b onto stack a
+    - `pb`: Push the top element of stack a onto stack b
+  - **Rotate:** 
+    - `ra`: Rotate stack a upwards (first element becomes the last)
+    - `rb`: Rotate stack b upwards (first element becomes the last)
+    - `rr`: Perform ra and rb simultaneously
+  - **Reverse rotate:** 
+    - `rra`: Rotate stack a downwards (last element becomes the first)
+    - `rrb`: Rotate stack b downwards (last element becomes the first)
+    - `rrr`: Perform rra and rrb simultaneously
+
 - The program must:
   - parse and validate all input integers,
   - detect duplicates, invalid characters, and overflows,
@@ -34,10 +48,13 @@ make
   - compute the “**disorder metric**” (0 = sorted, 1 = worst case),
   - choose the most appropriate sorting strategy from at least **four different algorithms**,
   - output the final list of operations to sort the numbers.
+
 - You must provide a `Makefile` with the rules:  
   **all**, **clean**, **fclean**, **re** (and **bonus** if applicable).
+
 - Memory leaks, undefined behavior, and crashes (segfaults, overflows, etc.) are strictly forbidden.
 
 ## Resources
 
-La il faut mettre les trucs qu'on regarde pour 
+- Peer-to-peer;
+- Subject PDF: [push_swap.pdf](./en.subject.pdf)

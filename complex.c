@@ -6,7 +6,7 @@
 /*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 17:06:15 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/08 17:01:26 by bclairot         ###   ########.fr       */
+/*   Updated: 2026/01/10 11:48:18 by bclairot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static int	get_max_bit(t_data *data)
 	return (max_bit);
 }
 
-void	radix(t_data *data, t_bench *bench)
+void	complex(t_data *data, t_bench *bench)
 {
 	int max_bit;
 	int i;

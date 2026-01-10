@@ -16,9 +16,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-// TODO delete before submission and replace printf by ft_printf
-# include <stdio.h>
-
 typedef struct s_list
 {
 	long long		value;
@@ -92,7 +89,13 @@ int					is_stack_sorted(t_data *data);
 void				bubble_sort(t_data *data, t_bench *bench);
 void				bucket_ins_sort(t_data *data, t_bench *bench);
 
-void				radix(t_data *data, t_bench *bench);
+void				complex(t_data *data, t_bench *bench);
+
+void				give_index(t_data *data);
+
+void				print_stack(t_list *stack);
+
+void    			adaptive(t_data *data, t_bench *bench);
 
 void				give_index(t_data *data);
 

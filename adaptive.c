@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error_handler.c                                    :+:      :+:    :+:   */
+/*   sort_adaptive.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/08 18:18:49 by bclairot          #+#    #+#             */
-/*   Updated: 2025/12/21 15:47:16 by bclairot         ###   ########.fr       */
+/*   Created: 2026/01/09 21:34:32 by bclairot          #+#    #+#             */
+/*   Updated: 2026/01/09 21:34:32 by bclairot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	error_handler(char *str) // TODO modifier les parametres pour free aussi ?
+void    adaptive(t_data *data, t_bench *bench)
 {
-	int	i;
-
-	i = 0;
-	if (!str)
-		str = "Error\n";
-	while (str[i])
-		i++;
-	write(2, str, i);
-	exit(1);
+    //int	size;
+    //size = data->size_a; // TODO optimize for size and 3 or 5 elements arrays
+    if(data.disorder_rate < 0.2)
+		bubble_sort(&data, &bench);
+    else if(data.disorder_rate >= 0.2 && data.disorder_rate < 0.5)
+		bucket_ins_sort(&data, &bench);
+    else 
+		complex(&data, &bench);
 }

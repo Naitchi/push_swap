@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 17:11:55 by cydupire          #+#    #+#             */
-/*   Updated: 2026/01/06 14:42:20 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/10 11:49:02 by bclairot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,16 +47,13 @@ static int	ft_multi(int len)
 static char	*ft_conv(char *str, int n, int len)
 {
 	int	i;
-	int	neg;
 
 	i = 0;
-	neg = 0;
 	if (n < 0)
 	{
 		str[i] = '-';
 		i++;
 		n = n * -1;
-		neg = 1;
 	}
 	while (i < (len))
 	{
@@ -88,9 +85,7 @@ char	*ft_itoa(int n)
 {
 	int		len;
 	char	*str;
-	int		i;
 
-	i = 0;
 	len = ft_check_len(n);
 	str = malloc((len + 1) * sizeof(char));
 	if (str == NULL)
