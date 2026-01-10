@@ -6,7 +6,7 @@
 /*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 18:15:35 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/08 15:40:02 by bclairot         ###   ########.fr       */
+/*   Updated: 2026/01/10 14:50:13 by bclairot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,7 @@ void	init_list(int argc, char *argv[], t_data *data, t_bench *bench)
 				list_init_element(data, split_rslt[j]);
 				j++;
 			}
+			ft_clear(split_rslt, j);
 		}
 		else
 			list_init_element(data, argv[i]);

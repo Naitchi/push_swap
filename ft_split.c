@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 13:32:08 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/06 14:55:04 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/10 14:49:08 by bclairot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static char	**ft_clear(char **rslt, int nbr_elems)
+char	**ft_clear(char **rslt, int nbr_elems)
 {
 	int	i;
 
