@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printptr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 15:17:20 by cydupire          #+#    #+#             */
-/*   Updated: 2025/11/28 10:38:46 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/10 12:41:38 by bclairot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static size_t	ft_hexalong_multi(size_t len)
 
 static size_t	ft_hexalong_len(size_t n)
 {
-	size_t		len;
+	size_t	len;
 
 	len = 0;
 	while ((n / 16) != 0)
@@ -80,6 +80,6 @@ int	ft_printptr(va_list list)
 	if (m == -1)
 		return (m);
 	tot = m + n;
-	free (str);
+	free(str);
 	return (tot);
 }

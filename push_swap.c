@@ -6,7 +6,7 @@
 /*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 17:53:39 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/10 11:48:27 by bclairot         ###   ########.fr       */
+/*   Updated: 2026/01/10 12:43:01 by bclairot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,15 +44,14 @@ int	main(int argc, char *argv[])
 
 	parsing(argc, argv);
 	init_list(argc, argv, &data, &bench);
-	if (data.strategy == 1)	
+	if (data.strategy == 1)
 		bubble_sort(&data, &bench);
 	else if (data.strategy == 2)
 		bucket_ins_sort(&data, &bench);
 	else if (data.strategy == 3)
 		complex(&data, &bench);
-	else (data.strategy == 4)
+	else
 		adaptive(&data, &bench);
-
 	show_bench(data, bench);
 	return (0);
 }

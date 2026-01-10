@@ -6,7 +6,7 @@
 /*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 15:17:20 by cydupire          #+#    #+#             */
-/*   Updated: 2026/01/06 12:14:14 by bclairot         ###   ########.fr       */
+/*   Updated: 2026/01/10 12:41:31 by bclairot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@ int	ft_printint(va_list list)
 	if (str == NULL)
 		return (-1);
 	n = ft_putstr_int(str);
-	free (str);
+	free(str);
 	return (n);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printhexa.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 15:17:20 by cydupire          #+#    #+#             */
-/*   Updated: 2025/11/28 10:36:07 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/10 12:41:29 by bclairot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,6 @@ int	ft_printhexa(va_list list, char c)
 	if (str == NULL)
 		return (-1);
 	n = ft_putstr_int(str);
-	free (str);
+	free(str);
 	return (n);
 }

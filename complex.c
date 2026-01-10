@@ -6,7 +6,7 @@
 /*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 17:06:15 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/10 11:48:18 by bclairot         ###   ########.fr       */
+/*   Updated: 2026/01/10 12:42:13 by bclairot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,16 +43,17 @@ static int	get_max_bit(t_data *data)
 
 void	complex(t_data *data, t_bench *bench)
 {
-	int max_bit;
-	int i;
-	int j;
+	int	max_bit;
+	int	i;
+	int	j;
+	int	size;
 
 	j = 0;
 	max_bit = get_max_bit(data);
 	while (j < max_bit)
 	{
 		i = 0;
-		int size = get_size_stack(data->a);
+		size = get_size_stack(data->a);
 		while (i <= size)
 		{
 			if (!(((data->a->index) >> j) & 1))

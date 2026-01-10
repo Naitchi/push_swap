@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printunsint.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 15:17:20 by cydupire          #+#    #+#             */
-/*   Updated: 2025/11/28 10:26:32 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/10 12:41:44 by bclairot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@ int	ft_printunsint(va_list list)
 	if (str == NULL)
 		return (-1);
 	n = ft_putstr_int(str);
-	free (str);
+	free(str);
 	return (n);
 }
