@@ -6,7 +6,7 @@
 /*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 18:30:09 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/07 13:45:41 by bclairot         ###   ########.fr       */
+/*   Updated: 2026/01/11 15:41:09 by bclairot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	swapping(t_list **lst)
 {
-	long long	temp_value;
+	int	temp_value;
 
 	if (*lst && (*lst)->next != NULL)
 	{

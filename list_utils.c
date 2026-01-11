@@ -6,13 +6,13 @@
 /*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 18:06:18 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/08 15:25:47 by bclairot         ###   ########.fr       */
+/*   Updated: 2026/01/11 15:40:57 by bclairot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list	*ft_lstnew(long long value)
+t_list	*ft_lstnew(int value)
 {
 	t_list	*new;
 

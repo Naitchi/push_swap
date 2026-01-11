@@ -13,12 +13,13 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
+# include <limits.h>
 # include <stdlib.h>
 # include <unistd.h>
 
 typedef struct s_list
 {
-	long long		value;
+	int				value;
 	unsigned int	index;
 	struct s_list	*next;
 	struct s_list	*prev;
@@ -57,9 +58,9 @@ char				**ft_clear(char **rslt, int nbr_elems);
 
 int					ft_printf(const char *str, ...);
 void				error_handler(char *str);
-void				list_init_element(t_data *data, const char *str);
+void				ft_lstclear(t_list **lst);
 
-t_list				*ft_lstnew(long long value);
+t_list				*ft_lstnew(int value);
 t_list				*ft_lstlast(t_list *lst);
 t_list				*ft_lstfirst(t_list *lst);
 void				ft_lstadd_back(t_list **lst, t_list *new_elmt);
@@ -67,7 +68,7 @@ void				ft_lstadd_back(t_list **lst, t_list *new_elmt);
 int					ft_isspace(char c);
 int					is_split_needed(char *str);
 void				parsing(int argc, char *argv[]);
-long long			ft_atoi(const char *str);
+int					ft_atoi(const char *str);
 
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 void				init_list(int argc, char *argv[], t_data *data,

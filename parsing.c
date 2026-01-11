@@ -6,7 +6,7 @@
 /*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 19:32:29 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/08 15:25:53 by bclairot         ###   ########.fr       */
+/*   Updated: 2026/01/11 15:37:48 by bclairot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,16 +58,16 @@ void	parsing(int argc, char *argv[])
 	}
 }
 
-long long	ft_atoi(const char *str)
+// TODO secured for overflow but just put int min or int max,
+// im good with it but we have to see with cydupire and maybe change it to an free and exit (way harder)
+int	ft_atoi(const char *str)
 {
-	int			i;
-	int			sign;
-	long long	rslt;
+	int	i;
+	int	sign;
+	int	rslt;
 
-	if (ft_strncmp(str, "-9223372036854775807", 21) == 0)
-		return (-9223372036854775807);
-	sign = 1;
 	i = 0;
+	sign = 1;
 	rslt = 0;
 	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
 		i++;
@@ -79,8 +79,11 @@ long long	ft_atoi(const char *str)
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		rslt *= 10;
-		rslt += (str[i] - '0');
+		if (sign == 1 && (rslt > (INT_MAX - (str[i] - '0')) / 10))
+			return (INT_MAX);
+		if (sign == -1 && (rslt > (-(INT_MIN + (str[i] - '0'))) / 10))
+			return (INT_MIN);
+		rslt = rslt * 10 + (str[i] - '0');
 		i++;
 	}
 	return (rslt * sign);

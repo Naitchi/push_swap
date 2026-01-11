@@ -6,7 +6,7 @@
 /*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 17:53:39 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/10 12:43:01 by bclairot         ###   ########.fr       */
+/*   Updated: 2026/01/11 15:42:35 by bclairot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,6 @@ int	main(int argc, char *argv[])
 	else
 		adaptive(&data, &bench);
 	show_bench(data, bench);
+	ft_lstclear(&data.a);
 	return (0);
 }

@@ -6,12 +6,13 @@
 /*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 18:15:35 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/10 14:50:13 by bclairot         ###   ########.fr       */
+/*   Updated: 2026/01/11 15:40:48 by bclairot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+// TODO move to utils.c if needed because he's used a lot
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
@@ -26,10 +27,37 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	return (0);
 }
 
-void	list_init_element(t_data *data, const char *str)
+static void	list_init_element_split(t_data *data, char **str, int i)
 {
-	long long	nbr;
-	t_list		*lst;
+	int		nbr;
+	t_list	*lst;
+	int		size;
+
+	size = 0;
+	nbr = 0;
+	nbr = ft_atoi(str[i]);
+	lst = data->a;
+	while (lst)
+	{
+		if (lst->value == nbr)
+		{
+			while (str[size])
+				size++;
+			ft_clear(str, size);
+			ft_lstclear(&data->a);
+			error_handler(0);
+		}
+		lst = lst->next;
+	}
+	ft_lstadd_back(&data->a, ft_lstnew(nbr));
+	data->size_a++;
+	return ;
+}
+
+static void	list_init_element(t_data *data, const char *str)
+{
+	int		nbr;
+	t_list	*lst;
 
 	nbr = 0;
 	nbr = ft_atoi(str);
@@ -45,7 +73,7 @@ void	list_init_element(t_data *data, const char *str)
 	return ;
 }
 
-void	init_stack_data(t_data *data, t_bench *bench) // TODO ft_memset
+static void	init_stack_data(t_data *data, t_bench *bench)
 {
 	data->a = NULL;
 	data->b = NULL;
@@ -84,7 +112,7 @@ void	init_list(int argc, char *argv[], t_data *data, t_bench *bench)
 			j = 0;
 			while (split_rslt[j])
 			{
-				list_init_element(data, split_rslt[j]);
+				list_init_element_split(data, split_rslt, j);
 				j++;
 			}
 			ft_clear(split_rslt, j);
