@@ -6,7 +6,7 @@
 /*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 19:32:29 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/12 15:17:00 by bclairot         ###   ########.fr       */
+/*   Updated: 2026/01/12 16:07:32 by bclairot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	check_int_range(char *s)
 		while (s[i] >= '0' && s[i] <= '9')
 		{
 			num = num * 10 + (s[i] - '0');
-			if ((sign == 1 && num > INT_MAX) || (sign == -1 && -num < INT_MIN))
+			if ((sign == 1 && num > INT_MAX) || (num * sign < INT_MIN))
 				error_handler(0);
 			i++;
 		}
@@ -87,4 +87,3 @@ void	parsing(int argc, char *argv[])
 		i++;
 	}
 }
-

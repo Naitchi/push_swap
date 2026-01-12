@@ -6,7 +6,7 @@
 /*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 18:15:35 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/12 15:16:26 by bclairot         ###   ########.fr       */
+/*   Updated: 2026/01/12 16:02:03 by bclairot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,12 +94,9 @@ void	init_list(int argc, char *argv[], t_data *data, t_bench *bench)
 		if (is_split_needed(argv[i]))
 		{
 			split_rslt = ft_split(argv[i]);
-			j = 0;
-			while (split_rslt[j])
-			{
+			j = -1;
+			while (split_rslt[++j])
 				list_init_element_split(data, split_rslt, j);
-				j++;
-			}
 			ft_clear(split_rslt, j);
 		}
 		else
