@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   buckets_management.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 14:35:27 by cydupire          #+#    #+#             */
-/*   Updated: 2026/01/12 12:18:08 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/12 15:35:35 by bclairot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,11 @@ int	*create_array(t_data *data, int nb_values)
 	min = 0;
 	array = malloc(sizeof(int) * nb_values);
 	if (!array)
+	{
+		ft_lstclear(data->a);
+		ft_lstclear(data->b);
 		error_handler(0);
+	}
 	ft_bzero(array, (nb_values * sizeof(int)));
 	min = find_min(data->a);
 	while (i < nb_values)

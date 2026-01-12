@@ -6,7 +6,7 @@
 /*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 15:38:26 by cydupire          #+#    #+#             */
-/*   Updated: 2026/01/12 15:24:51 by bclairot         ###   ########.fr       */
+/*   Updated: 2026/01/12 15:47:15 by bclairot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,12 +93,8 @@ void	medium(t_data *data, t_bench *bench)
 		free(buck.array);
 	}
 	while (data->b)
-	{
 		insert_to_a(data, bench);
-	}
 	while (is_stack_sorted(data) != 1)
-	{
 		op_reverse_rotate(data, 'a', bench);
-	}
 	return ;
 }
