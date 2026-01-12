@@ -6,7 +6,7 @@
 /*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 18:06:18 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/09 10:57:40 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/12 12:19:24 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,10 @@ void	ft_lstadd_back(t_list **lst, t_list *new_elmt)
 	ptr->next = new_elmt;
 	new_elmt->prev = ptr;
 }
+
 void	ft_lstclear(t_list **lst)
 {
-	t_list *p;
+	t_list	*p;
 
 	if (lst == NULL)
 		return ;

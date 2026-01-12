@@ -6,11 +6,23 @@
 /*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 15:38:26 by cydupire          #+#    #+#             */
-/*   Updated: 2026/01/12 10:55:11 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/12 12:18:33 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	min_max_mngmt(t_data *data, t_bench *bench, unsigned int min)
+{
+	while (data->a->index != min)
+	{
+		if (rot_or_rev(data, min) == 0)
+			op_rotate(data, 'a', bench);
+		else
+			op_reverse_rotate(data, 'a', bench);
+	}
+	op_push(data, 'a', bench);
+}
 
 void	insert_to_a(t_data *data, t_bench *bench)
 {
@@ -23,16 +35,7 @@ void	insert_to_a(t_data *data, t_bench *bench)
 		min = find_min(data->a);
 		max = find_max(data->a);
 		if (data->b->index < min || data->b->index > max)
-		{
-			while (data->a->index != min)
-			{
-				if (rot_or_rev(data, min) == 0)
-					op_rotate(data, 'a', bench);
-				else
-					op_reverse_rotate(data, 'a', bench);
-			}
-			op_push(data, 'a', bench);
-		}
+			min_max_mngmt(data, bench, min);
 		else if (data->b->index > data->a->index)
 			op_rotate(data, 'a', bench);
 		else if (data->b->index > ft_lstlast(data->a)->index
