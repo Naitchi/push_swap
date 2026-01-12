@@ -6,11 +6,11 @@
 /*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 17:06:15 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/10 12:42:13 by bclairot         ###   ########.fr       */
+/*   Updated: 2026/01/12 15:24:44 by bclairot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static void	push_everything_from_b_to_a(t_data *data, t_bench *bench)
 {

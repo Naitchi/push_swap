@@ -115,9 +115,6 @@ void				complex(t_data *data, t_bench *bench);
 
 void				give_index(t_data *data);
 
-// TODO for debugging, do we delete at the end ?
-void				print_stack(t_list *stack);
-
 void				adaptive(t_data *data, t_bench *bench);
 
 #endif

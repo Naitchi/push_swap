@@ -6,26 +6,11 @@
 /*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 18:15:35 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/11 15:40:48 by bclairot         ###   ########.fr       */
+/*   Updated: 2026/01/12 15:16:26 by bclairot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-// TODO move to utils.c if needed because he's used a lot
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
-{
-	size_t	i;
-
-	i = 0;
-	while (i < n && (s1[i] || s2[i]))
-	{
-		if (s1[i] != s2[i])
-			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
-		i++;
-	}
-	return (0);
-}
 
 static void	list_init_element_split(t_data *data, char **str, int i)
 {

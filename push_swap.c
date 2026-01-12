@@ -3,39 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 17:53:39 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/12 14:57:00 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/12 15:13:46 by bclairot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	print_stack(t_list *stack)
-{
-	t_list	*current_stack;
-
-	current_stack = stack;
-	if (!current_stack)
-	{
-		ft_printf("Nothing in the stack.\n\n");
-		return ;
-	}
-	ft_printf("Stack contents:\n\n");
-	while (current_stack)
-	{
-		ft_printf("Value: %d,Index: %d, Address: %p, prev: %p, next: %p\n",
-			current_stack->value, current_stack->index, (void *)current_stack,
-			current_stack->prev, current_stack->next);
-		current_stack = current_stack->next;
-		if (current_stack)
-			ft_printf("%s",
-				"-----------------------------------------------------\n");
-		else
-			ft_printf("\n");
-	}
-}
 
 int	main(int argc, char *argv[])
 {

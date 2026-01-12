@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 19:32:29 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/12 14:06:53 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/12 15:17:00 by bclairot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,31 +88,3 @@ void	parsing(int argc, char *argv[])
 	}
 }
 
-int	ft_atoi(const char *str)
-{
-	int	i;
-	int	sign;
-	int	rslt;
-
-	i = 0;
-	sign = 1;
-	rslt = 0;
-	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
-		i++;
-	if (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
-			sign = -1;
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		if (sign == 1 && (rslt > (INT_MAX - (str[i] - '0')) / 10))
-			return (INT_MAX);
-		if (sign == -1 && (rslt > (-(INT_MIN + (str[i] - '0'))) / 10))
-			return (INT_MIN);
-		rslt = rslt * 10 + (str[i] - '0');
-		i++;
-	}
-	return (rslt * sign);
-}
