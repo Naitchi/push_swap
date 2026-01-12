@@ -6,7 +6,7 @@
 /*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 19:32:29 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/12 16:07:32 by bclairot         ###   ########.fr       */
+/*   Updated: 2026/01/12 17:48:47 by bclairot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,9 +81,9 @@ void	parsing(int argc, char *argv[])
 			if ((argv[i][j] < '0' || argv[i][j] > '9') && argv[i][j] != '-'
 				&& argv[i][j] != '+' && !ft_isspace(argv[i][j]))
 				error_handler(0);
-			check_int_range(argv[i]);
 			j++;
 		}
+		check_int_range(argv[i]);
 		i++;
 	}
 }
