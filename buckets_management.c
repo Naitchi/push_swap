@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   buckets_management.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 14:35:27 by cydupire          #+#    #+#             */
-/*   Updated: 2026/01/12 16:02:55 by bclairot         ###   ########.fr       */
+/*   Updated: 2026/01/12 19:43:11 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	find_min(t_list *lst)
+unsigned int	find_min(t_list *lst)
 {
 	unsigned int	min;
 
@@ -26,7 +26,7 @@ int	find_min(t_list *lst)
 	return (min);
 }
 
-int	find_max(t_list *lst)
+unsigned int	find_max(t_list *lst)
 {
 	unsigned int	max;
 

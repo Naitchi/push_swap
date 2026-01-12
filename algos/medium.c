@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   medium.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 15:38:26 by cydupire          #+#    #+#             */
-/*   Updated: 2026/01/12 15:47:15 by bclairot         ###   ########.fr       */
+/*   Updated: 2026/01/12 19:28:03 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,8 @@ void	insert_to_a(t_data *data, t_bench *bench)
 			min_max_mngmt(data, bench, min);
 		else if (data->b->index > data->a->index)
 			op_rotate(data, 'a', bench);
-		else if (data->b->index > ft_lstlast(data->a)->index
-			&& data->b->index > data->a->index)
-			op_reverse_rotate(data, 'a', bench);
-		else if (data->b->index < ft_lstlast(data->a)->index
-			&& data->b->index < data->a->index)
+		else if (data->b->index < data->a->index
+			&& data->b->index < ft_lstlast(data->a)->index)
 			op_reverse_rotate(data, 'a', bench);
 		else
 			op_push(data, 'a', bench);

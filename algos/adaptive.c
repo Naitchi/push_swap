@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   adaptive.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/09 21:34:32 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/12 17:03:48 by bclairot         ###   ########.fr       */
+/*   Updated: 2026/01/12 19:58:59 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 

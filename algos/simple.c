@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   simple.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 09:01:24 by cydupire          #+#    #+#             */
-/*   Updated: 2026/01/12 15:24:54 by bclairot         ###   ########.fr       */
+/*   Updated: 2026/01/12 19:50:15 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,34 @@
 
 void	simple(t_data *data, t_bench *bench)
 {
-	int	i;
+	unsigned int	min;
+	unsigned int	max;
 
-	i = 0;
-	while (is_stack_sorted(data) != 1)
+	op_push(data, 'b', bench);
+	while (data->a)
 	{
-		while (i < data->size_a - 1)
+		min = find_min(data->b);
+		max = find_max(data->b);
+		if (data->a->index < min || data->a->index > max)
 		{
-			if (data->a->value > data->a->next->value)
-				op_swap(data, 'a', bench);
-			if (is_stack_sorted(data) == 1)
-				return ;
-			op_rotate(data, 'a', bench);
-			i++;
+			while (data->b->index != max)
+				op_reverse_rotate(data, 'b', bench);
+			op_push(data, 'b', bench);
 		}
-		i = 0;
-		op_rotate(data, 'a', bench);
+		else if (data->a->index < data->b->index
+			&& data->a->index > ft_lstlast(data->b)->index)
+			op_reverse_rotate(data, 'b', bench);
+		else if (data->a->index < data->b->index)
+			op_rotate(data, 'b', bench);
+		else if (data->a->index > data->b->index
+			&& data->a->index > ft_lstlast(data->b)->index)
+			op_reverse_rotate(data, 'b', bench);
+		else
+			op_push(data, 'b', bench);
 	}
+	while (data->b->index != find_max(data->b))
+		op_rotate(data, 'b', bench);
+	while (data->b)
+		op_push(data, 'a', bench);
 	return ;
 }
