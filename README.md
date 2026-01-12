@@ -4,7 +4,7 @@
 
 ## Description
 
-This activity will make you sort data on a stack, with a limited set of instructions, using the lowest possible number of actions. To succeed you’ll have to manipulate various types of algorithms and choose the most appropriate solution (out of many) for optimized data sorting.
+This program computes the lowest number of actions needed to sort data on a stack. It works with a limited set of operations and chooses the most appropriate solution between various types of algorithms for optimized data sorting.
 
 - You must use two stacks: **stack a** (initial input) and **stack b** (auxiliary).
 
@@ -25,13 +25,13 @@ This activity will make you sort data on a stack, with a limited set of instruct
     - `rrb`: Rotate stack b downwards (last element becomes the first)
     - `rrr`: Perform rra and rrb simultaneously
 
-- The program must:
-  - parse and validate all input integers,
-  - detect duplicates, invalid characters, and overflows,
-  - initialize stack `a`,
-  - compute the “**disorder metric**” (0 = sorted, 1 = worst case),
-  - choose the most appropriate sorting strategy from at least **four different algorithms**,
-  - output the final list of operations to sort the numbers.
+- The program:
+  - parses and validates all input integers
+  - detects duplicates, invalid characters, and overflows
+  - initializes stack `a`
+  - computes the “**disorder metric**” (0 = sorted, 1 = worst case)
+  - chooses the most appropriate sorting strategy from at least **four different algorithms**
+  - outputs the final list of operations needed to sort the numbers.
 
 ## Instructions
 
@@ -42,7 +42,13 @@ git clone
 cd push_swap
 # Compile the program: 
 make
-# Run the program with a list of integers: 
+#Flags available:
+#--simple: for the O(n^2) algorithm
+#--medium: for the O(n√n)) algorithm
+#--complex: for the O(n log n) algorithm
+#--adaptive: for a strategy adapted to the measured disorder (default behavior if no flag is given)
+#--bench: activate the benchmark mode, printing additionnal information about the program's output
+# Run the program with a list of integers and the flags of your choice: 
 ./push_swap 3 2 1 0 "10 5 -1"
 ```
 
