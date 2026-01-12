@@ -6,7 +6,7 @@
 /*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 19:32:29 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/11 15:37:48 by bclairot         ###   ########.fr       */
+/*   Updated: 2026/01/12 13:19:53 by bclairot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,35 @@ int	is_split_needed(char *str)
 	return (0);
 }
 
+void	check_int_range(char *s)
+{
+	long	num;
+	int		sign;
+	int		i;
+
+	i = 0;
+	while (s[i])
+	{
+		while (ft_isspace(s[i]))
+			i++;
+		sign = 1;
+		if (s[i] == '+' || s[i] == '-')
+		{
+			if (s[i] == '-')
+				sign = -1;
+			i++;
+		}
+		num = 0;
+		while (s[i] >= '0' && s[i] <= '9')
+		{
+			num = num * 10 + (s[i] - '0');
+			if ((sign == 1 && num > INT_MAX) || (sign == -1 && -num < INT_MIN))
+				error_handler(0);
+			i++;
+		}
+	}
+}
+
 void	parsing(int argc, char *argv[])
 {
 	int	i;
@@ -52,14 +81,13 @@ void	parsing(int argc, char *argv[])
 			if ((argv[i][j] < '0' || argv[i][j] > '9') && argv[i][j] != '-'
 				&& argv[i][j] != '+' && !ft_isspace(argv[i][j]))
 				error_handler(0);
+			check_int_range(argv[i]);
 			j++;
 		}
 		i++;
 	}
 }
 
-// TODO secured for overflow but just put int min or int max,
-// im good with it but we have to see with cydupire and maybe change it to an free and exit (way harder)
 int	ft_atoi(const char *str)
 {
 	int	i;
