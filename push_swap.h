@@ -100,8 +100,8 @@ void				op_reverse_rotate(t_data *data, char which_stack,
 						t_bench *bench);
 
 int					is_stack_sorted(t_data *data);
-void				bubble_sort(t_data *data, t_bench *bench);
-void				bucket_ins_sort(t_data *data, t_bench *bench);
+void				simple(t_data *data, t_bench *bench);
+void				medium(t_data *data, t_bench *bench);
 void				update_buckets(t_data *data, t_buckets *buck);
 int					find_nb_buckets(t_data *data);
 int					is_value_present(int value, int *array, int size);

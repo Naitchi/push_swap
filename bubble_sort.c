@@ -6,13 +6,13 @@
 /*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 09:01:24 by cydupire          #+#    #+#             */
-/*   Updated: 2026/01/12 14:07:28 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/12 14:56:41 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	bubble_sort(t_data *data, t_bench *bench)
+void	simple(t_data *data, t_bench *bench)
 {
 	int	i;
 

@@ -6,7 +6,7 @@
 /*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 15:38:26 by cydupire          #+#    #+#             */
-/*   Updated: 2026/01/12 12:18:33 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/12 14:57:00 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int	find_nb_buckets(t_data *data)
 	return (i - 1);
 }
 
-void	bucket_ins_sort(t_data *data, t_bench *bench)
+void	medium(t_data *data, t_bench *bench)
 {
 	int			i;
 	t_buckets	buck;

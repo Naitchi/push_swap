@@ -6,7 +6,7 @@
 /*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 17:53:39 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/12 14:08:57 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/12 14:57:00 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,9 @@ int	main(int argc, char *argv[])
 	if (!is_stack_sorted(&data))
 	{
 		if (data.strategy == 1)
-			bubble_sort(&data, &bench);
+			simple(&data, &bench);
 		else if (data.strategy == 2)
-			bucket_ins_sort(&data, &bench);
+			medium(&data, &bench);
 		else if (data.strategy == 3)
 			complex(&data, &bench);
 		else
