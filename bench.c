@@ -6,7 +6,7 @@
 /*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 12:41:16 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/12 12:16:53 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/12 13:50:10 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	print_parameters(t_data data)
 		if (data.disorder_rate < 0.2)
 			write(2, "O(n^2)\n", 7);
 		else if (data.disorder_rate >= 0.2 && data.disorder_rate < 0.5)
-			write(2, "O(n√n)\n", 7);
+			write(2, "O(n√n)\n", 9);
 		else
 			write(2, "O(n log n)\n", 11);
 	}
