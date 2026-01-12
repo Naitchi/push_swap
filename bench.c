@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bench.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 12:41:16 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/10 12:41:56 by bclairot         ###   ########.fr       */
+/*   Updated: 2026/01/12 14:07:21 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	print_parameters(t_data data)
 		if (data.disorder_rate < 0.2)
 			write(2, "O(n^2)\n", 7);
 		else if (data.disorder_rate >= 0.2 && data.disorder_rate < 0.5)
-			write(2, "O(n√n)\n", 7);
+			write(2, "O(n√n)\n", 9);
 		else
 			write(2, "O(n log n)\n", 11);
 	}

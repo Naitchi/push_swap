@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bubble_sort.c                                      :+:      :+:    :+:   */
+/*   utils_libft.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/06 09:01:24 by cydupire          #+#    #+#             */
-/*   Updated: 2026/01/12 14:07:28 by cydupire         ###   ########lyon.fr   */
+/*   Created: 2026/01/07 14:40:49 by cydupire          #+#    #+#             */
+/*   Updated: 2026/01/12 12:18:29 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	bubble_sort(t_data *data, t_bench *bench)
+// maybe add atoi, strncmp here?
+
+void	ft_bzero(void *s, int n)
 {
 	int	i;
 
 	i = 0;
-	while (is_stack_sorted(data) != 1)
+	while (i < n)
 	{
-		while (i < data->size_a - 1)
-		{
-			if (data->a->value > data->a->next->value)
-				op_swap(data, 'a', bench);
-			if (is_stack_sorted(data) == 1)
-				return ;
-			op_rotate(data, 'a', bench);
-			i++;
-		}
-		i = 0;
-		op_rotate(data, 'a', bench);
+		*(unsigned char *)s = 0;
+		i++;
+		s++;
 	}
 	return ;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   op_reverse_rotate.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 18:30:03 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/07 13:45:18 by bclairot         ###   ########.fr       */
+/*   Updated: 2026/01/12 14:08:20 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
