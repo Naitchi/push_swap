@@ -4,7 +4,7 @@
 
 ## Description
 
-This program computes the lowest number of operations needed to sort data on a stack. It works with a limited set of operations and chooses the most appropriate solution between various types of algorithms for optimized data sorting.
+This program computes the minimum number of operations needed to sort data on a stack. It uses a limited set of operations and selects the most appropriate solution between various types of algorithms for optimized sorting.
 
 ***Constraints:***  
 Two stacks are used: **stack a** (initial input) and **stack b** (auxiliary).  
@@ -28,7 +28,7 @@ Only the predefined operations are allowed:
 ***The program:***  
 - parses and validates all input integers  
 - detects duplicates, invalid characters, and overflows  
-- initializes the stack `a`  
+- initialises the stack `a`  
 - computes the "**disorder metric**" (0 = sorted, 1 = worst case)  
 - chooses the most appropriate sorting strategy from **different algorithms**  
 - outputs the final list of operations needed to sort the numbers.  
@@ -59,12 +59,12 @@ Available flags:
 ### Insertion sort
 
 - Overview  
-Insertion sort is a simple algorithm that works by iteratively inserting each element of an unsorted list into its correct position in a sorted portion of the list.  
-This algorithm was adapted by insering the value into its correct position in the stack b, then pushing back all the sorted values into the stack a.
+Insertion sort is a simple algorithm that iteratively inserts each element of an unsorted list into its correct position in a sorted portion of the list.  
+This algorithm was adapted by inserting the value into its correct position in the stack b, then pushing back all the sorted values into the stack a.
   
 - Complexity  
-  - O(n2) for the average case.
-  - The use of the push_swap operations adds some complexity as the program pushes back and forth between the stacks. The bigger the stack, the more the complexity scales up.
+  - O(n²) for the average case.
+  - The use of the push_swap operations adds some complexity as the program pushes back and forth between the stacks. The larger the stack, the greater the complexity.
 
 - Strengths 
   - Easy to implement
@@ -78,8 +78,8 @@ This algorithm was adapted by insering the value into its correct position in th
 ### Bucket/range sort:
 
 - Overview  
-  Bucket sort divides the range of values into several buckets, distributes the elements into these buckets, then performs a simple sort inside each bucket and concatenates the results.   
-  In our push_swap, this algorithm is adapted by dividing values into buckets and grouping values by an index range (hence the bucket/range). The groups are then pushed into stack b and the values are inserted back into the stack a in the correct order using minimal rotations.
+  Bucket sort divides the range of values into several buckets, distributes the elements into these buckets, then performs a simple sort within each bucket and concatenates the results.   
+  In our push_swap, this algorithm is adapted by dividing the values into buckets and grouping values by an index (hence the name "bucket/range"). The groups are then pushed into stack b and the values are inserted back into the stack a in the correct order using minimal rotations.
 
 - Complexity  
   - O(n√n), the complexity is based on the number of buckets (√n).  
@@ -87,17 +87,17 @@ This algorithm was adapted by insering the value into its correct position in th
 
 - Strengths 
   - Flexible: bucket granularity is tuned by input size.  
-  - Using a range of indexes for the bucketing nullify the weakness of bucket sort (the programm never creates an empty bucket as we have an homogenous number of elements in the buckets)
-  - Good hybrid: combining bucketing with insertion generate fewer moves for partially ordered or clustered data.  
+  - Using a range of indexes for the bucketing nullifies the weakness of bucket sorting because the programm never creates an empty bucket as there is an homogeneous number of elements in the buckets.
+  - Good hybrid: combining bucketing with insertion generates fewer moves for partially ordered or clustered data.  
 
 - Weaknesses  
-  - Requires extra logic to manage bucket boundaries and efficient reinsertion strategy.  
-  - Not as predictable as radix for uniformly distributed values.
+  - Requires extra logic to manage bucket boundaries and obtain an efficient reinsertion strategy.  
+  - Less predictable than radix for uniformly distributed values.
 
 ### Radix sort:
 
 - Overview  
-  Radix sort processes numbers by digits (or bits) from least significant to most, distributing elements into buckets per digit. Here, we implemented a binary (bitwise) radix: for each bit position, push elements with 0 in that bit to stack b and rotate/preserve those with 1, then push b back — repeat for all bits.
+  Radix sort processes numbers by digits (or bits) from least to most significant, distributing elements into buckets per digit. Here, we implemented a binary (bitwise) radix: for each bit position, we push elements with 0 in that bit to stack b and rotate/preserve those with 1, then push the elements in b back into the stack a — repeat for all bits.
 
 - Complexity  
   - (O(n log n)): the complexity depends on the number of bits.
@@ -105,11 +105,11 @@ This algorithm was adapted by insering the value into its correct position in th
 - Strengths  
   - Predictable for large stacks with a near-linear move count.  
   - Simple to implement with indexes.  
-  - Works well on large disordered stacks.
+  - Works well on large, disordered stacks.
 
 - Weaknesses  
-  - For very small stacks, the program outputs longer sequences than specialized small-sort strategies.  
-  - Requires bit-wise passes; performance sensitive to whether you compress values to indexes.  
+  - For very small stacks, the program produces longer sequences than specialized small-sort strategies.  
+  - Requires bitwise passes; performance sensitive to whether you compress values to indexes.  
 
 ## Resources
 - Subject of the projet [push_swap.pdf](./en.subject.pdf)
