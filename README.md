@@ -114,3 +114,9 @@ Available flags:
 
 
 - AI has been used on this project to help refactor the code (when it was too long or did not comply with the norm) and to populate some sections of the Readme which have been revised later on.
+
+## Project organisation
+
+*cydupire* was in charge of the scripts regarding operations as well as the simple and complex algorithms.  
+*bclairot* set up the projet and worked on the parsing, initialisation, error management, bench and complex algorithm.
+Both participated in the redaction of the Makefile and the README.

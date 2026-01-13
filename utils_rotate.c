@@ -6,7 +6,7 @@
 /*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/09 12:14:44 by cydupire          #+#    #+#             */
-/*   Updated: 2026/01/09 15:12:53 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/13 10:03:56 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,15 +96,15 @@ int	nb_rot_needed(t_list *lst, unsigned int index, int order)
 	return (nb + order);
 }
 
-int	rot_or_rev(t_data *data, unsigned int index)
+int	rot_or_rev(t_list *lst, unsigned int index)
 {
 	int	next;
 	int	prev;
 	int	res;
 
 	res = 0;
-	next = nb_rot_needed(data->a, index, 0);
-	prev = nb_rot_needed(data->a, index, 1);
+	next = nb_rot_needed(lst, index, 0);
+	prev = nb_rot_needed(lst, index, 1);
 	if (next > prev)
 		res = 1;
 	return (res);

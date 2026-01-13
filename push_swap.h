@@ -109,7 +109,7 @@ int					rot_or_rev_buck(t_data *data, t_buckets *buck);
 unsigned int		find_min(t_list *lst);
 unsigned int		find_max(t_list *lst);
 
-int					rot_or_rev(t_data *data, unsigned int index);
+int					rot_or_rev(t_list *lst, unsigned int index);
 
 void				complex(t_data *data, t_bench *bench);
 
