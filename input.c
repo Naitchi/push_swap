@@ -6,7 +6,7 @@
 /*   By: bclairot <bclairot@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 18:15:35 by bclairot          #+#    #+#             */
-/*   Updated: 2026/01/12 16:02:03 by bclairot         ###   ########.fr       */
+/*   Updated: 2026/01/12 18:54:31 by bclairot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,10 @@ static void	list_init_element(t_data *data, const char *str)
 	while (lst)
 	{
 		if (lst->value == nbr)
+		{
+			ft_lstclear(&data->a);
 			error_handler(0);
+		}
 		lst = lst->next;
 	}
 	ft_lstadd_back(&data->a, ft_lstnew(nbr));
