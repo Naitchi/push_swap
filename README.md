@@ -47,7 +47,7 @@ make
 ```
 Available flags:  
 `--simple` to run the O(n^2) algorithm  
-`--medium` to run  the O(n√n)) algorithm  
+`--medium` to run  the O(n√n) algorithm  
 `--complex` to run  the O(n log n) algorithm  
 `--adaptive` to run a strategy adapted to the measured disorder (default behavior if no flag is given)  
 `--bench` to activate the benchmark mode, printing additionnal information about the program's output
@@ -59,19 +59,26 @@ Available flags:
 ### Insertion sort
 
 - Overview  
+Insertion sort is a simple algorithm that works by iteratively inserting each element of an unsorted list into its correct position in a sorted portion of the list.  
+This algorithm was adapted by insering the value into its correct position in the stack b, then pushing back all the sorted values into the stack a.
   
-
 - Complexity  
-  
+  - O(n2) for the average case.
+  - The use of the push_swap operations adds some complexity as the program pushes back and forth between the stacks. The bigger the stack, the more the complexity scales up.
+
 - Strengths 
+  - Easy to implement
+  - Stable sorting
+  - Efficient for small stacks or when the disorder is small
 
 - Weaknesses  
+  - Inefficient for large stacks
 
 
-### Bucket insertion sort:
+### Bucket/range sort:
 
 - Overview  
-  Bucket insertion sort divides the range of values into several buckets, distributes elements into these buckets, then performs insertion sort (or another simple sort) inside each bucket and concatenates the results.   
+  Bucket sort divides the range of values into several buckets, distributes elements into these buckets, then performs a simple sort inside each bucket and concatenates the results.   
   In our push_swap, this algorithm is adapted by grouping values by index, pushing groups to stack b and inserting the values back into the stack a in the correct order using minimal rotations.
 
 - Complexity  
