@@ -6,7 +6,7 @@
 /*   By: cydupire <cydupire@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 14:35:27 by cydupire          #+#    #+#             */
-/*   Updated: 2026/01/12 19:43:11 by cydupire         ###   ########lyon.fr   */
+/*   Updated: 2026/01/13 14:01:15 by cydupire         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,9 @@ unsigned int	find_max(t_list *lst)
 
 int	*create_array(t_data *data, int nb_values)
 {
-	int	*array;
-	int	min;
-	int	i;
+	int				*array;
+	unsigned int	min;
+	int				i;
 
 	i = 0;
 	min = 0;
