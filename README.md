@@ -30,7 +30,7 @@ Only the predefined operations are allowed:
 - detects duplicates, invalid characters, and overflows  
 - initializes the stack `a`  
 - computes the "**disorder metric**" (0 = sorted, 1 = worst case)  
-- chooses the most appropriate sorting strategy from **four different algorithms**  
+- chooses the most appropriate sorting strategy from **different algorithms**  
 - outputs the final list of operations needed to sort the numbers.  
 
 ## Instructions
@@ -78,43 +78,42 @@ This algorithm was adapted by insering the value into its correct position in th
 ### Bucket/range sort:
 
 - Overview  
-  Bucket sort divides the range of values into several buckets, distributes elements into these buckets, then performs a simple sort inside each bucket and concatenates the results.   
-  In our push_swap, this algorithm is adapted by grouping values by index, pushing groups to stack b and inserting the values back into the stack a in the correct order using minimal rotations.
+  Bucket sort divides the range of values into several buckets, distributes the elements into these buckets, then performs a simple sort inside each bucket and concatenates the results.   
+  In our push_swap, this algorithm is adapted by dividing values into buckets and grouping values by an index range (hence the bucket/range). The groups are then pushed into stack b and the values are inserted back into the stack a in the correct order using minimal rotations.
 
 - Complexity  
-  - Average: O(n + k + m^2) depending on bucket distribution (k = number of buckets, m = average bucket size).    
+  - O(n√n), the complexity is based on the number of buckets (√n).  
   - Moves count in push_swap depends on how many rotations are required per element.
 
-- Strengths (why we include it)  
+- Strengths 
   - Flexible: bucket granularity is tuned by input size.  
-  - Good hybrid: combining coarse bucketing with local insertion yields low moves for partially ordered or clustered data.  
+  - Using a range of indexes for the bucketing nullify the weakness of bucket sort (the programm never creates an empty bucket as we have an homogenous number of elements in the buckets)
+  - Good hybrid: combining bucketing with insertion generate fewer moves for partially ordered or clustered data.  
 
 - Weaknesses  
-   - Requires extra logic to manage bucket boundaries and efficient reinsertion strategy.  
+  - Requires extra logic to manage bucket boundaries and efficient reinsertion strategy.  
   - Not as predictable as radix for uniformly distributed values.
 
 ### Radix sort:
 
 - Overview  
-  Radix sort processes numbers by digits (or bits) from least significant to most, distributing elements into buckets per digit. In push_swap the binary (bitwise) radix is common: for each bit position, push elements with 0 in that bit to stack b and rotate/preserve those with 1, then push b back — repeat for all bits.
+  Radix sort processes numbers by digits (or bits) from least significant to most, distributing elements into buckets per digit. Here, we implemented a binary (bitwise) radix: for each bit position, push elements with 0 in that bit to stack b and rotate/preserve those with 1, then push b back — repeat for all bits.
 
 - Complexity  
-  - Time: O(n * d) where d is number of digits/bits (for 32-bit ints d ≤ 32).  
-  - Moves: O(n * d) pushes/rotates, which is linear in n for fixed word size.
+  - (O(n log n)): the complexity depends on the number of bits.
 
-- Strengths (why we include it)  
-  - Predictable, fast for large n — near-linear move count.  
-  - Simple to implement with index compression (use ranks so d = ceil(log2(n))).  
-  - Works well on random large datasets and often yields competitive move counts in push_swap.
+- Strengths  
+  - Predictable for large stacks with a near-linear move count.  
+  - Simple to implement with indexes.  
+  - Works well on large disordered stacks.
 
 - Weaknesses  
-  - For very small n, constant overhead gives longer sequences than specialized small-sort strategies.  
-  - Requires bit-wise passes; performance sensitive to whether you compress values to ranks.  
-  - Less effective if implementation doesn't compress values first (more passes needed).
+  - For very small stacks, the program outputs longer sequences than specialized small-sort strategies.  
+  - Requires bit-wise passes; performance sensitive to whether you compress values to indexes.  
 
 ## Resources
 - Subject of the projet [push_swap.pdf](./en.subject.pdf)
-- Peer-to-peer (special thanks to ...)
+- Peer-to-peer (special thanks to *tmarion*, *tchemin*, *bpoumeau*, *gmach*, *bfitte*)
 - Extensive [guide about sorting algorithms](https://www.geeksforgeeks.org/dsa/introduction-to-sorting-algorithm/)
 - Blog article about sorting algorithms with [detailled explanations of the simple algorithms](https://medium.com/jl-codes/understanding-sorting-algorithms-af6222995c8) (bubble, selection, insertion)
 - Youtube video about [common sorting algorithms](https://www.youtube.com/watch?v=AAwYzYkjNTg)
